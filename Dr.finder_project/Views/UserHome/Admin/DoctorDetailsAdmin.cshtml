@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "DoctorDetailsAdmin";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>User profile form requirement</title>
+
+</head>
+
+<body>
+
+    @foreach (var item in ViewData["usdfd"] as List<Dr.finder_project.Controllers.DrDetails>)
+    {
+        <div class="container">
+            <br />
+            <div class="col-lg-12" style="margin:0px;">
+                <div class="col-lg-6">
+                    <label class="form-control" style="height:600px;">
+                        <img src="~/Images/@item.Doctor_Image" style="height:100%;width:100%;" />
+                    </label>
+                    
+
+                </div>
+            
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">First Name:</mark></abbr><br />
+                       @item.Doctor_fname
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">Middel Name</mark></abbr><br />
+                        @item.Doctor_mname
+
+
+                    </div>
+                </div>
+
+                
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">Last Name</mark></abbr><br />
+                        @item.Doctor_lname
+
+
+                    </div>
+                </div>
+               
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">Mobile No</mark></abbr><br />
+                        @item.Doctor_Mobile_No
+
+
+                    </div>
+                </div>
+
+                    
+
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">Email</mark></abbr><br />
+                        @item.Doctor_Email_Id
+
+
+                    </div>
+                </div>
+                    
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">Gender</mark></abbr><br />
+                        @item.Doctor_gender
+
+
+                    </div>
+                </div>
+
+                
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">Experiance(Years)</mark></abbr><br />
+                        @item.Doctor_Experience
+
+
+                    </div>
+                </div>
+                    
+                
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <abbr> <mark style="font-size:20px;">Doctor type</mark></abbr><br />
+                            @item.Doctor_Type_Name
+
+
+                        </div>
+                    </div>
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">City</mark></abbr><br />
+                        @item.Doctor_city
+
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6" style="margin-bottom:1%">
+                    <div class="col-lg-6">
+                        <abbr> <mark style="font-size:20px;">Address</mark></abbr><br />
+                        @item.Doctor_Address
+                        
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+    }
+
+</body>
+
+</html>
+
+

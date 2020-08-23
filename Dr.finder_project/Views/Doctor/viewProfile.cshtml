@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Title = "viewProfile";
+    Layout = "~/Views/Shared/Doctor_Layout.cshtml";
+}
+
+
+
+
+
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+    @*<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+        <!-- Bootstrap Core CSS -->
+        <!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+
+        <!-- Custom CSS -->
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->*@
+
+</head>
+
+<body>
+    <br />
+    @foreach (var item in ViewData["vp"] as List<Dr.finder_project.Controllers.DrDetails>)
+    {
+        <div class="container-fluid">
+            <div class="jumbotron">
+                @Html.Raw(TempData["msg"]);
+                <div class="row">
+                    <div class="col-md-10 ">
+
+
+                        <br />
+                        <form class="form-horizontal">
+                            <fieldset>
+
+                                <!-- Form Name -->
+                                <legend>Doctor profile</legend>
+
+                                <!-- Text input-->
+
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios"> First Name</label>
+
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "fname", fname = item.Doctor_fname, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="radios-0">
+
+                                            @item.Doctor_fname
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios"> Middel Name</label>
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "mname", fname = item.Doctor_mname, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="radios-0">
+
+                                            @item.Doctor_mname
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios"> Last Name</label>
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm","Doctor", new { id = item.Doctor_Id, cng = "lname", fname = item.Doctor_lname, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="radios-0">
+
+                                            @item.Doctor_lname
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios"> Mobile Number</label>
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "mob", fname = item.Doctor_Mobile_No, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="radios-0">
+
+                                            @item.Doctor_Mobile_No
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios">Email ID</label>
+                                    <div class="col-md-4">
+                                        <label class="radio-inline" for="radios-0">
+                                            @item.Doctor_Email_Id
+
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios"> Status:</label>
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "status", fname = item.Doctor_Status, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="radios-0">
+
+                                            @item.Doctor_Status
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                                <!-- Multiple Radios (inline) -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="Gender">Gender</label>
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "gender", fname = item.Doctor_gender, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="Gender-0">
+
+                                            @item.Doctor_gender
+                                        </label>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="Gender">Experiance(Years)</label>
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "exp", fname = item.Doctor_Experience, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="Gender-0">
+                                            @item.Doctor_Experience
+                                        </label>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios"> Doctor Type Name </label>
+                                    <div cslass="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "typename", fname = item.Doctor_Type_Name, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="radios-``0">
+                                            @item.Doctor_Type_Name
+
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="radios"> Doctor Address </label>
+                                    <div cslass="col-md-4">
+                                        <a href="@Url.Action("ViewDoctorProfileForm", "Doctor", new { id = item.Doctor_Id, cng = "draddres", fname = item.Doctor_Address, id1 = item.Doctor_Id })"><label class="radio-inline">Edit</label></a>
+                                        <label class="radio-inline" for="radios-0">
+                                            @item.Doctor_Address
+
+                                        </label>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"></label>
+                                    <div class="col-md-4">
+                                        <a href="@Url.Action("AddCertificate","Doctor")" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>Add Certificate Details</a>
+
+
+                                    </div>
+                                </div>
+
+                                @foreach (var item1 in ViewData["prf"] as List<Dr.finder_project.EDM.Certificate_tbl>)
+                                {
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios"> Certificate Details </label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+                                                @item1.Certificate_Details
+
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios"> Certificate Image </label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+
+                                                <img src="~/Images/@item1.Certificate_Image" style="width:100px;height:100px;" alt="" />
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+
+                                }
+
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label"></label>
+                                    <div class="col-md-4">
+                                        @*<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span>Edit Profile</a>*@
+
+
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
+
+                    </div>
+                    <div class="col-md-2 hidden-xs">
+                        <img src="~/Images/@item.Doctor_Image" class="img-responsive img-thumbnail ">
+                        <a href="@Url.Action("viewDoctorProfileImage", "Doctor", new { id = item.Doctor_Id, cng = "image", fname = item.Doctor_Image, id1 = item.Doctor_Id })"><label class="radio-inline">Change Profile picture</label></a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+
+    @*<!-- jQuery Version 1.11.1 -->
+        <script src="js/jquery.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>*@
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "ViewAllAppointment";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+    <title>Untitled Document</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h2>ViewAllAppointment</h2>
+            <table class="table table-striped" id="example" border="0">
+                <thead>
+                    <tr>
+                        <th>Doctor info</th>
+                        <th>Hospital info</th>
+                        <th>Pateint info</th>
+                        <th>Appointment Date</th>
+                        <th>Booking Date </th>
+                        <th>Appointment Description</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="6" align="center"> </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in ViewData["viewAllApp"] as List<Dr.finder_project.Controllers.AppointmentDetails>)
+                    {
+
+
+                        <tr>
+                            <td>
+                                <img src="~/Images/@item.Doctor_Image" style="height:200px;width:200px;" />
+                                <br />@item.Doctor_fname &nbsp; @item.Doctor_mname &nbsp;  @item.Doctor_lname
+                            </td>
+                            <td>
+                                <img src="~/Images/@item.Hospital_Image" style="height:200px;width:200px;" /><br />
+                                @item.Hospital_Name
+                            </td>
+                            <td>@item.User_S_fName&nbsp;@item.User_S_mName&nbsp;@item.User_s_lName</td>
+                            <td>@item.Appointment_Date</td>
+                            <td>@item.Appointment_Current_Date</td>
+                            <td>@item.Appointment_Description</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+    <script>
+	$(document).ready(function() {
+    $('#example').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
+    </script>
+</body>
+</html>

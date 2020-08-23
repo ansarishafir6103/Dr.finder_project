@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "ApproveHospital";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+        <title>Untitled Document</title>
+
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <h2>Approve Hospitals</h2>
+                <table id="example" border="0">
+                    <thead>
+                        <tr>
+                            <th style="color:brown;"> Image</th>
+                            <th style="color:brown;"> Name</th>
+                            <th style="color:brown;"> Mobile_No </th>
+                            <th style="color:brown;"> Email ID</th>
+                            <th style="color:brown;"> Address</th>
+                            <th style="color:brown;"> Description</th>
+                            <th style="color:brown;">Approved</th>
+                            <th style="color:brown;">Denided</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" align="center"></td>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+
+                        @foreach (var item in ViewData["xyz"] as List<Dr.finder_project.EDM.Hospital_tbl>)
+                    {
+                            <tr>
+                                <td>
+                                    <img src="~/Images/@item.Hospital_Image" style="height:100px;width:100px" />
+                                </td>
+                                <td>
+                                    @item.Hospital_Name
+                                </td>
+                                <td>
+                                    @item.Hospital_Mobile_No
+                                </td>
+                                <td>
+                                    @item.Hospital_Email_Id
+                                </td>
+                                <td>
+                                    @item.Hospital_Address
+                                </td>
+                                <td>
+                                    @item.Hospital_Discription
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("ApproveHospital_Approved", "Admin", new { id = item.Hospital_Id })" class="btn btn-danger">Approve</a>
+
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("Hospital_Denided", "Admin", new { id = item.Hospital_Id })" class="btn btn-danger">Denid</a>
+                                </td>
+
+
+
+                            </tr>
+                    }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+        <script>
+	$(document).ready(function() {
+    $('#example').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
+        </script>
+    </body>
+</html>
+
+
+
+
+
+

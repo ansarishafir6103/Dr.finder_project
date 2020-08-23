@@ -1,0 +1,184 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h2>Index</h2>
+
+
+
+
+        <div class="col-md-3 four-grid">
+            <div class="four-grid1" style="background-color:brown;">
+                <div class="icon">
+                    <center>
+                    <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                        </center>
+</div>
+                
+                    
+                
+                
+               
+                <div class="four-text">
+                    <center><h3 style="color:white;">Today user Registration</h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label>@ViewData["drcnt"]</label></h4>
+                        </center>
+                            <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                        </div>
+                
+                <a href="@Url.Action("ViewAllusers","Admin")" style="color:white"><center>More Info</center></a>
+            </div>
+        </div>
+        <div class="col-md-3 four-grid" >
+            <div class="four-grid1" style="background-color:brown;">
+                <div class="icon">
+                    <center>
+                        <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                    </center>
+                </div>
+                <div class="four-text">
+                    <center><h3 style="color:white;">Today Hospitals Registration</h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label>@ViewData["hcnt"]</label>  </h4>
+                    </center>
+                    <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                </div>
+                <a href="@Url.Action("HospitalView","Admin")" style="color:white"><center>More Info</center></a>
+            </div>
+       
+        </div>
+        <div class="col-md-3 four-grid">
+            <div class="four-grid1" style="background-color:brown;">
+                <div class="icon">
+                    <center>
+                        <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                    </center>
+                </div>
+                <div class="four-text">
+                    <center><h3 style="color:white;">Today All Appointments</h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label>@ViewData["acnt"]</label>  </h4>
+                    </center>
+                    <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                </div>
+                <a href="@Url.Action("ViewAllAppointment", "Admin")" style="color:white"><center>More Info</center></a>
+            </div>
+            
+        </div>
+        <div class="col-md-3 four-grid">
+            <div class="four-grid1" style="background-color:brown;">
+                <div class="icon">
+                    <center>
+                        <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                    </center>
+                </div>
+                <div class="four-text">
+                    <center><h3 style="color:white;">All Users Of This Websites </h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label>@ViewData["usrcnt"]</label>  </h4>
+                    </center>
+                    <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                </div>
+                <a href="@Url.Action("ViewAllusers","Admin")" style="color:white"><center>More Info</center></a>
+            </div>
+       
+        </div>
+
+       
+        <div class="col-md-3 four-grid" style="margin-top:2%;">
+            <div class="four-grid1">
+                <div class="icon">
+                    <center>
+                        @*<i class="glyphicon glyphicon-user" aria-hidden="true"></i>*@
+                    </center>
+                </div>
+                <div class="four-text">
+                    <center><h3 style="color:white;"></h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label></label>  </h4>
+                    </center>
+                    <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                </div>
+                <a href="#" data-toggle="modal" data-target="#myModal1" style="color:white"><center></center></a>
+            </div>
+
+
+
+
+        </div>
+
+
+        <div class="col-md-3 four-grid" style="margin-top:2%;">
+            <div class="four-grid1" style="background-color:brown;">
+                <div class="icon">
+                    <center>
+                        <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                    </center>
+                </div>
+                <div class="four-text">
+                    <center><h3 style="color:white;">All Hospitlas Of This Site</h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label>@ViewData["hos"]</label>  </h4>
+                    </center>
+                    <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                </div>
+                <a href="@Url.Action("HospitalView","Admin")" style="color:white"><center>More Info</center></a>
+            </div>
+
+
+
+
+        </div>
+
+
+
+        <div class="col-md-3 four-grid" style="margin-top:2%;">
+            <div class="four-grid1" style="background-color:brown;">
+                <div class="icon">
+                    <center>
+                        <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                    </center>
+                </div>
+                <div class="four-text">
+                    <center><h3 style="color:white;">All appointments of Hospitals</h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label>@ViewData["all_app"]</label>  </h4>
+                    </center>
+                    <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                </div>
+                <a href="@Url.Action("ViewAllAppointment","Admin")" style="color:white"><center>More Info</center></a>
+            </div>
+
+
+
+
+        </div>
+        <div class="col-md-3 four-grid" style="margin-top:2%;">
+            <div class="four-grid1">
+                <div class="icon">
+                    <center>
+                        @*<i class="glyphicon glyphicon-user" aria-hidden="true"></i>*@
+                    </center>
+                </div>
+                <div class="four-text">
+                    <center><h3 style="color:white;"></h3></center>
+                    <center>
+                        <h4 style="color:white;"> <label></label>  </h4>
+                    </center>
+                    <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                </div>
+                <a href="#" data-toggle="modal" data-target="#myModal1" style="color:white"><center></center></a>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+</div>

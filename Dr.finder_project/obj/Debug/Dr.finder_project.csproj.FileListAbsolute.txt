@@ -1,0 +1,98 @@
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.dll.config
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.pdb
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Antlr3.Runtime.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\EntityFramework.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Microsoft.Web.Infrastructure.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Newtonsoft.Json.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Net.Http.Formatting.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.WebHost.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Mvc.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Optimization.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Providers.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Razor.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Deployment.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Razor.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\WebGrease.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\EntityFramework.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\Newtonsoft.Json.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Net.Http.Formatting.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.WebHost.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Mvc.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.Razor.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Deployment.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Razor.xml
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.dll
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.pdb
+F:\BCA-ALL-materials\SEM-6 all materials\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.csprojResolveAssemblyReference.cache
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.dll.config
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.pdb
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Antlr3.Runtime.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\EntityFramework.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Microsoft.Web.Infrastructure.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Newtonsoft.Json.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Net.Http.Formatting.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.WebHost.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Mvc.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Optimization.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Providers.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Razor.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Deployment.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Razor.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\WebGrease.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\EntityFramework.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Newtonsoft.Json.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Net.Http.Formatting.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.WebHost.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Mvc.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Razor.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Deployment.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Razor.xml
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.csprojResolveAssemblyReference.cache
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.dll
+F:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.pdb
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.dll.config
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Dr.finder_project.pdb
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Antlr3.Runtime.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\EntityFramework.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Microsoft.Web.Infrastructure.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Newtonsoft.Json.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Net.Http.Formatting.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.WebHost.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Mvc.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Optimization.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Providers.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Razor.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Deployment.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Razor.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\WebGrease.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\EntityFramework.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\Newtonsoft.Json.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Net.Http.Formatting.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Http.WebHost.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Mvc.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.Razor.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Deployment.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\bin\System.Web.WebPages.Razor.xml
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.csprojAssemblyReference.cache
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.csproj.CoreCompileInputs.cache
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.csproj.CopyComplete
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.dll
+E:\Dr_finder backup project - final\Dr.finder_project\Dr.finder_project\obj\Debug\Dr.finder_project.pdb

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "UpdateUserProfile";
+    Layout = "~/Views/Shared/User_panel_LayoutPage.cshtml";
+}
+@using (Html.BeginForm("UpdateUserProfile", "UserHome", FormMethod.Post, new { id="form1"}))
+{
+<div class="container">
+    @{var id = @Request.QueryString["u2"];}
+    @{var n = @Request.QueryString["pn"];}
+    @{ var ch = @Request.QueryString["chg"];}
+    <div class="col-lg-10" style="margin:5%;">
+       
+
+        <div class="col-lg-5">
+
+           
+            
+ 
+            <input type="text" name="updt" value="@n" class=" form-control" data-bvalidator="required" />
+        </div>
+        <div class="col-lg-5">
+            <input type="submit" class="form-control" style="width:100px;"/>
+        </div>
+        
+    </div>
+    <input type="hidden" name="chvar" value="@ch" />
+    <input type="hidden" name="uid" value="@id" />   
+</div>
+}

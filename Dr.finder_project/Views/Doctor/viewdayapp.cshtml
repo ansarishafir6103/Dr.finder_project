@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "viewdayapp";
+    Layout = "~/Views/Shared/Doctor_Layout.cshtml";
+}
+
+<link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+<script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "pagingType": "full_numbers"
+            });
+        });
+</script>
+
+
+<div class="container">
+    <br />
+    <div class="jumbotron">
+        
+        <div class="table-responsive">
+            <table class="table table-striped" id="example">
+                <thead>
+                    <tr style="background-color:aliceblue;">
+                        <th style="color:black;">First Name</th>
+                        <th style="color:black;">Middle Name</th>
+                        <th style="color:black;">Last Name</th>
+                        <th style="color:black;">Bookin Date</th>
+                        <th style="color:black;">Appointment Date</th>
+                        <th style="color:black;">Appointment Description</th>
+                        <th style="color:black;">Complete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewData["asng"] as List<Dr.finder_project.EDM.viewdrasapp_Result>)
+                    {
+
+                        <tr>
+                            <td style="color:black;">@item.User_S_fName</td>
+                            <td style="color:black;">@item.User_S_mName</td>
+                            <td style="color:black;">@item.User_s_lName</td>
+                            <td style="color:black;">@item.Appointment_Current_Date</td>
+                            <td style="color:black;">@item.Appointment_Date</td>
+                            <td style="color:black;">@item.Appointment_Description</td>
+                            <td style="color:black; "><a href="@Url.Action("completedayapp", "Doctor", new { asid = item.Appointment_Id })"><input type="button" value="Complete" style="background-color: aliceblue; border:0px;" /></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <br />
+    </div>
+</div>

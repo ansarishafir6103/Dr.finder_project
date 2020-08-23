@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <title>Editprofile</title>
+</head>
+<body>
+    <h2>EditProfile</h2>
+    <div class="panel panel-widget forms-panel">
+        <div class="forms">
+            <div class="form-two widget-shadow">
+                <div class="form-title">
+                    <h4>Update data  :</h4>
+                </div>
+               
+                <div class="form-body" data-example-id="simple-form-inline">
+                    @using (Html.BeginForm("EditProfile", "Hospital", FormMethod.Post, new {id="form1", @class = "form-inline" }))
+                    {
+
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                    @{
+                        var n = Request.QueryString["v"];
+                        var id = Request.QueryString["id2"];
+                        var chg = Request.QueryString["chg"];
+                       } 
+                            <input type="hidden" name="hid" value="@id" />
+                            <input type="hidden" name="chg" value="@chg" />
+                            <input type="text" class="form-control" id="exampleInputEmail2" name="update" value="@n" data-bvalidator="required" />
+                        </div> <button type="submit" class="btn btn-default">Update</button>
+                    }   
+                </div>
+                @Html.Raw(TempData["update"])
+            </div>
+        </div>
+    </div>
+</body>
+</html>

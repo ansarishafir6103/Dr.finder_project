@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "ShowBlockListUser";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="modal-content" style="margin-bottom:15px;">
+        <div class="modal-header">
+            <div class="row" style="border: thick;">
+                <div class="col-md-2 text-center">
+                    <a class="btn btn-default" href="@Url.Action("ShowBlockList","Admin")"> Hospitals List</a>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-default" href="@Url.Action("ShowBlockListUser", "Admin")"> Users List</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal-header">
+            <h2>Show Block List User</h2>
+
+            <link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+
+
+
+
+
+            <table id="example" border="0">
+                <thead style="background-color:brown;color:white;">
+                    <tr>
+                        <th>User Name</th>
+                        <th></th>
+                        <th>Mobile No</th>
+                        <th>Unblock</th>
+                        <th></th>
+                        <th></th>
+                       
+                    </tr>
+                </thead>
+                <tfoot style="background-color:brown;">
+                    <tr>
+                        <td colspan="6" align="center"></td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in ViewData["blistuser"] as List<Dr.finder_project.EDM.User_s_tbl>)
+                    {
+                        <tr>
+                          
+                            <td>@item.User_S_fName &nbsp;@item.User_S_mName  &nbsp; @item.User_s_lName</td>
+                            <td></td>
+                            <td>@item.User_S_Mobile_No</td>
+                            <td><a href="@Url.Action("UnbolckUser", "Admin", new { id = item.User_S_Id })" class="btn btn-danger">Unblock</a></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "pagingType": "full_numbers"
+        });
+    });
+</script>
+

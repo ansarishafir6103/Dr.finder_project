@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DoctorLogin</title>
+  
+    <script src='@Url.Content("~/Scripts/jquery-1.8.2.min.js")'></script>
+    <script src="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js"></script>
+    <link rel="stylesheet" href='@Url.Content("~/Dr_finder_tmp/UserLogin and reg/css/style.css")'>
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css" rel="stylesheet" />
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css" rel="stylesheet" />
+    
+        <script type="application/x-javascript">
+            addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+                   function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- //for-mobile-apps -->
+        <link href="~/Dr_finder_tmp/Doctor_login_form/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <link href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#form1').bValidator();
+    });
+    </script>
+
+    <div class="container-fluid">
+        @using (Html.BeginForm("DoctorLogin","UserHome", FormMethod.Post, new { id="form1"}))
+                    {
+            <!-- main -->
+            <div class="main">
+                @Html.Raw(TempData["wrongd"])<br />
+                <h1>Doctor  Login Form</h1>
+                
+                <div class="input_form">
+                  
+                    
+                    <input type="text" value="User Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" name="UserName" data-bvalidator="email,required" />
+                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" name="Password" data-bvalidator="required" />
+                  
+                    
+                </div>
+                <div class="ckeck-bg">
+                    <div class="checkbox-form">
+                        <div class="check-left">
+                            <div class="check">
+                                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Remember my Password</label>
+                            </div>
+                        </div>
+                        <div class="check-right">
+                    
+                                <input type="submit" value="Login">
+                          
+                         </div>
+                       
+                        <div class="clearfix">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <center><a href="@Url.Action("ForgetPassDoctor", "Doctor")"> Forget Password</a></center>
+            </div>
+        }
+        
+        
+        
+            <div class="footer">
+                <p>&copy 2017 Doctor Finder. All rights reserved </p>
+            </div>
+            <!-- //main -->
+        
+
+
+    </div>
+</body>
+</html>

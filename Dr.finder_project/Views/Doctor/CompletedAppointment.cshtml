@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "CompletedAppointment";
+    Layout = "~/Views/Shared/Doctor_Layout.cshtml";
+}
+
+<link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+<script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "pagingType": "full_numbers"
+            });
+        });
+</script>
+
+<div class="container-fluid">
+    <br />  
+    <div class="jumbotron">
+        <table class="table table-striped" id="example" style="margin:10px;">
+            <thead>
+                <tr class="info">
+                    <th style="color:black;">User Name</th>
+                    <th style="color:black;">Appointment Date</th>
+                    <th style="color:black;">Booking date</th>
+                    <td style="color:black;">Appointment Description</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewData["capp"] as List<Dr.finder_project.Controllers.complete>)
+                {
+                    <tr>
+                        <td style="color:black;">@item.User_S_mName</td>
+                        <td style="color:black;">@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.adate))</td>
+                        <td style="color:black;">@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.cdate))</td>
+                        <td style="color:black;">@item.desc</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

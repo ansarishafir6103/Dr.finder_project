@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+<script src='@Url.Content("~/Dr_finder_tmp/User_penal/User_Tmp/js/jquery-1.11.1.min.js")'></script>
+<script src='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js")'></script>
+<link href='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css")' rel="stylesheet" />
+<link href='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css")' rel="stylesheet" />
+
+@*<a href="~/Dr_finder_tmp/Admin_side_login_page/sass/style.sass">~/Dr_finder_tmp/Admin_side_login_page/sass/style.sass</a>*@
+<link href="~/Dr_finder_tmp/Admin_side_login_page/css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/Dr_finder_tmp/User_side_Login_and_sign/css/style.css">
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#signin').bValidator();
+    });
+</script>
+@using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { @id = "signin" }))
+{ 
+    <div>
+        @Html.Raw(TempData["admin"])
+
+                        <header>Login</header>
+                <label>Username <span></span></label>
+        <input type="text" class="ribbon" id="signin" name="Admin_Email" placeholder="Admin Email" data-bvalidator="email,required" />
+                <div class="help">At least 6 character</div>
+                <label>Password <span></span></label>
+        <input type="password" class="ribbon" id="signin" name="Admin_pass" placeholder="Password" data-bvalidator="required" />
+
+                <div class="help">Use upper and lowercase lettes as well</div>
+                <button>Login</button>
+           
+    </div>
+}

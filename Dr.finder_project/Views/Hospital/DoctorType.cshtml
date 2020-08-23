@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "DoctorType";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+<html>
+<head>
+    <title>DoctorType</title>
+</head>
+<body>
+    <h2>DoctorType</h2>
+    <div class="panel panel-widget forms-panel">
+      
+        <div class="forms">
+            <div class="form-two widget-shadow">
+                <div class="form-title">
+                    <h4> Add Doctor Type :</h4>
+                </div>
+                <div class="form-body" data-example-id="simple-form-inline">
+                    @using (Html.BeginForm("DoctorType","Hospital",FormMethod.Post,new{id="form1",@class="form-inline"}))
+                    { 
+
+                     <div class="form-group">
+                         @Html.Raw(TempData["dtype"]) 
+                         </div>
+                     <div class="form-group"> 
+                        
+                         <input type="text" class="form-control" id="exampleInputEmail2" name="Dr_type_name" placeholder="Add Doctor Type Name" data-bvalidator="required" />
+                         </div> <button type="submit" class="btn btn-default">submit</button> 
+                        }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

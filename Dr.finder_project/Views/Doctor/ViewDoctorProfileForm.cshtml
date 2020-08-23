@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "ViewDoctorProfileForm";
+    Layout = "~/Views/Shared/Doctor_Layout.cshtml";
+}
+@using (Html.BeginForm("ViewDoctorProfileForm", "Doctor", FormMethod.Post, new {id="form1" }))
+{ 
+<div class="container">
+    @{
+    var id = @Request.QueryString["id1"];
+    var cng = @Request.QueryString["cng"];
+    var fname = @Request.QueryString["fname"];
+    }
+    <br />
+    <div class="head-t">
+        <h3>Update profile</h3>
+        @Html.Raw(TempData["in"])
+    </div>
+    <br />
+
+    <div class="col-lg-12" style="margin:0px;">
+        <div class="col-lg-6">
+            <input type="text" class="form-control" name="updt" value="@fname" data-bvalidator="required" />
+        </div>
+        <div class="col-lg-6">
+            <input type="submit" class="form-control" style="width:20%;background-color:#000000;color:#ffffff;" value="Update"/>
+        </div>
+    </div>
+    
+    <input type="hidden" value="@id" name="id"/>
+    <input type="hidden" value="@cng" name="cng"/>
+</div>
+<br />
+}

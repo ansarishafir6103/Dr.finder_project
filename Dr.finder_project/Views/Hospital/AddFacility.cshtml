@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "AddFacility";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+
+<html>
+<head>
+    <title>AddFacility</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <div class="panel panel-widget forms-panel">
+
+                <div class="forms">
+                    <div class="form-two widget-shadow">
+                        <div class="form-title">
+                            <h4> Add Facility form  :</h4>&nbsp;@Html.Raw(TempData["af"])
+
+                        </div>
+                        <div class="form-body" data-example-id="simple-form-inline">
+
+                            @using (Html.BeginForm("AddFacility", "Hospital", FormMethod.Post, new {id="form1", @class = "form-inline" }))
+                        {
+                                <div class="form-group">
+                                    <label for="exampleInputName2">Facility Name</label>
+                                    <input type="text" class="form-control" id="exampleInputName2" name="fc_name" placeholder="Your name" data-bvalidator="required" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail2">facility Description</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail2" name="fc_des" placeholder="Description" data-bvalidator="required">
+                                </div> <button type="submit" class="btn btn-default">Submit</button>
+
+                        }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
+

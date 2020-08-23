@@ -1,0 +1,222 @@
+﻿@{
+    ViewBag.Title = "DoctorIndex";
+    Layout = "~/Views/Shared/Doctor_Layout.cshtml";
+}
+
+
+   <!--//header-bottom-->
+<!--banner-->
+<div class="banner">
+    <div class="container ">
+        <!-- banner-text Slider starts Here -->
+        <script src="~/Dr_finder_tmp/User_penal/User_Tmp/js/responsiveslides.min.js"></script>
+        <script>
+                // You can also use "$(window).load(function() {"
+                $(function () {
+                    // Slideshow 4
+                    $("#slider3").responsiveSlides({
+                        auto: true,
+                        pager: true,
+                        nav: false,
+                        speed: 500,
+                        namespace: "callbacks",
+                        before: function () {
+                            $('.events').append("<li>before event fired.</li>");
+                        },
+                        after: function () {
+                            $('.events').append("<li>after event fired.</li>");
+                        }
+                    });
+                });
+        </script>
+        <!--//End-slider-script -->
+        <div id="top" class="callbacks_container">
+            <ul class="rslides" id="slider3">
+                <li>
+                    <div class="banner-text">
+                        <h1>We are here to care for you</h1>
+                        <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-text">
+                        <h1>Lorem ip sum avai re for cayou</h1>
+                        <p>Majority have sufferedorem lipsum available, but the  alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-text">
+                        <h1>Availf able lor emip cayou refor</h1>
+                        <p>Randomised words orem ipsum available, but the majority have suffered alteration in some form, by injected humour, or which don't look even slightly believable.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--//banner-->
+<!--banner-bottom-->
+<div class="banner-bottom">
+    <div class="container">
+        <h2>Lorem Ipsum was popularised in the with the release of Letraset sheets containing</h2>
+        <a href="#gallery" class="arrow scroll"> </a>
+    </div>
+</div>
+<!--//banner-bottom-->
+<!--gallery-->
+<div class="gallery" id="gallery">
+    <div class="col-md-6 gallery-left">
+        <h4>Letraset sheets</h4>
+        <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe with the release of </p>
+    </div>
+    <div class="col-md-6 gallery-right">
+        <div class="gallery-grid-a">
+            <h4>Letraset sheets</h4>
+            <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe with the release of </p>
+        </div>
+        <div class="gallery-grid-b">
+            <h4>Letraset sheets</h4>
+            <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe with the release of </p>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<!--//gallery-->
+<!--work-->
+<div class="work">
+    <div class="container">
+        <div class="work-title">
+            <h3>More projects</h3>
+            <p>Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe</p>
+        </div>
+        <div class="col-md-4 work-grids">
+            <ul>
+                <li><img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/icon2.png" alt=""></li>
+                <li>
+                    <h4>Quas molestias excep</h4>
+                    <p>praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 work-grids">
+            <ul>
+                <li><img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/icon3.png" alt=""></li>
+                <li>
+                    <h4>occaecati cupiusint</h4>
+                    <p>praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4 work-grids">
+            <ul>
+                <li><img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/icon4.png" alt=""></li>
+                <li>
+                    <h4>Excepturi sint occa</h4>
+                    <p>praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//work-->
+<div class="like">
+    <div class="container">
+        <div class="work-title">
+            <h3>Stay connected with us</h3>
+            <p class="cnnct">Lorem Ipsum was popularised in the with the release of Letraset sheets contai ningthe</p>
+        </div>
+        <div class="col-md-3 like-grids">
+            <a href="#">
+                <img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/icon1.png" alt="" />
+            </a>
+            <p>Facebook</p>
+        </div>
+        <div class="col-md-3 like-grids">
+            <a href="#">
+                <img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/icon5.png" alt="" />
+            </a>
+            <p>Twitter</p>
+        </div>
+        <div class="col-md-3 like-grids">
+            <a href="#">
+                <img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/icon6.png" alt="" />
+            </a>
+            <p>Pinterest</p>
+        </div>
+        <div class="col-md-3 like-grids">
+            <a href="#">
+                <img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/icon7.png" alt="" />
+            </a>
+            <p>Googleplus</p>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--map-->
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24195.46256216959!2d-74.0042145!3d40.7084875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1434980604138"></iframe>
+    <div class="container">
+        <div class="map-info">
+            <ul>
+                <li>Head office</li>
+                <li>Anore Road-22</li>
+                <li>New York,USA-0000</li>
+                <li>111 222 555</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--//map-->
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-md-4 recent-posts">
+                <h4>Recent posts</h4>
+                <div class="recent-posts-text">
+                    <h5>MARCH 30, 2015</h5>
+                    <p>Duis autem vel eum iriure dolor</p>
+                </div>
+                <div class="recent-posts-text">
+                    <h5>MARCH 15, 2015</h5>
+                    <p>Duis autem vel eum iriure dolor</p>
+                </div>
+                <div class="recent-posts-text">
+                    <h5>MARCH 3, 2015</h5>
+                    <p>Duis autem vel eum iriure dolor</p>
+                </div>
+            </div>
+            <div class="col-md-4 recent-posts">
+                <h4>Twitter feeds</h4>
+                <div class="recent-posts-text">
+                    <h5>about 2 days ago<span>kristit</span></h5>
+                    <p>Good work buddy</p>
+                </div>
+                <div class="recent-posts-text">
+                    <h5>about 2 days ago <span>fasteven</span></h5>
+                    <p>Good work buddy</p>
+                </div>
+                <div class="recent-posts-text">
+                    <h5>about 2 days ago <span>streamer</span> </h5>
+                    <p>Good work buddy</p>
+                </div>
+            </div>
+            <div class="col-md-4 recent-posts">
+                <h4>Our address</h4>
+                <p class="adrs">
+                    Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus,
+                    facilisi Nam liber tempor cum soluta
+                </p>
+                <ul>
+                    <li><span></span>Moonshine St. 14/05 Light, Japan</li>
+                    <li><span class="ph-no"></span>+00 (123) 111 11 11</li>
+                    <li><span class="mail"></span><a href="mailto:example@mail.com">mail@example.com</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!--//footer-->
+

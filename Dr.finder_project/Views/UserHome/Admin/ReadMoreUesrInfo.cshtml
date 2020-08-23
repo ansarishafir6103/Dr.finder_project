@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "ReadMoreUesrInfo";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+
+
+<div class="container">
+  
+       <div class="head-t" style="color:white;background-color:brown; height:50px;width:100%;">
+           <label style="margin-left:10px;font-size:20px;">More Details:</label> 
+       </div>
+    <center>
+        @{var item = ViewData["UserReadMoreInfo"] as Dr.finder_project.EDM.User_s_tbl;}
+        <br />
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">User Name</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_fName&nbsp;@item.User_S_mName&nbsp;@item.User_s_lName</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">Email Id</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_Email_Id</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">Mobile No</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_Mobile_No</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">Gender</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_Gender</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">Date of Birth</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_DOB</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">city</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_City</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">Address</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_Address</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:25px;color:brown;">Pincode</label>
+                </div>
+                <div class="col-lg-6">
+                    <label style="text-align:left;font-size:20px;">@item.User_S_Pincode</label>
+                </div>
+            </div>
+      
+        </div>
+    </center>
+   </div>

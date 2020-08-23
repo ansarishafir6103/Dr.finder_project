@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "SearchHospitalUser";
+    Layout = "~/Views/Shared/User_Master_Layout.cshtml";
+}
+
+<script>
+    $(document).ready(function ()
+    {
+        var url = window.location.href;
+        var sps = url.split("/");
+
+      var st =   sps[sps.length - 1].toString();
+         
+     
+      var st1 = st.replace(/%20/g, " ");
+      
+     
+     
+                var srch = st1.toLowerCase();
+
+            $("#main #child #c1 h4").each(function () {
+                var s = $(this).text().toLowerCase();
+                if (s.indexOf(srch) != -1) {
+                    $(this).parent().parent().parent().show();
+            
+               
+                }
+                else
+                {
+                    $(this).parent().parent().parent().hide();
+                    flag = 0; 
+                }
+            });
+
+            
+
+        ////});
+
+        ////$("#search").on("keyup", function () {
+        ////    var srch = $(this).text().toLowerCase();
+
+        ////    $("#main #child #c1 h4").each(function () {
+        ////        var s = $(this).text().toLowerCase();
+        ////        if (s.indexOf(srch) != -1) {
+        ////            $(this).parent().parent().parent().show();
+        ////        }
+        ////        else {
+        ////            $(this).parent().parent().parent().hide();
+        ////        }
+        ////    });
+
+
+        ////});
+
+
+
+    });
+   
+</script>
+
+
+
+<h2>SearchHospitalUser</h2>
+
+<div class="container">
+    <div class="col-lg-12">
+        <input type="hidden" id="ttt" value="@ViewBag.msg"/>
+        <div class="row services-info">
+            @foreach (var item in ViewData["Uview"] as List<Dr.finder_project.EDM.Hospital_tbl>)
+            {
+                <div class="col-sm-6 col-md-4 services-grids" id="main">
+                    <div class="thumbnail" id="child">
+                        <div class="moments-bottom">
+                            <a href="~/Images/@item.Hospital_Image">
+                                <img src="~/Images/@item.Hospital_Image" style="height:300px;width:100%;" class="img-responsive zoom-img " alt="">
+                            </a>
+                        </div>
+                        <div class="caption services-caption" style="height:130px;" id="c1">
+                            <h4>@item.Hospital_Name</h4>
+                            <p>
+                                Contact :-@item.Hospital_Mobile_No<br />
+                                <a href="@Url.Action("Umoredetails","UserHome", new {id=item.Hospital_Id })" class="btn btn-success">Read More</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+

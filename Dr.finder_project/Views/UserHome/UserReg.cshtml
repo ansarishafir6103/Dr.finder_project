@@ -1,0 +1,108 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Sign in form</title>
+    <script src='@Url.Content("~/Scripts/jquery-1.8.2.min.js")'></script>
+    <script src="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js"></script>
+    <link rel="stylesheet" href='@Url.Content("~/Dr_finder_tmp/UserLogin and reg/css/style.css")'>
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css" rel="stylesheet" />
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#form1').bValidator();
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+
+    <div class="pen-title">
+
+        <h1>sign Up</h1>
+
+
+    </div>
+
+    <!-- Form Module-->
+    <div class="module form-module" style="max-width:500px;">
+        <div class="">
+        </div>
+
+        <div class="form">
+            @using (Html.BeginForm("UserReg", "UserHome", FormMethod.Post, new { id = "form1" }))
+            {
+
+                <h2>Create an account</h2>
+
+                <input type="text" placeholder="Enter First Name" name="fname" data-bvalidator="maxlength[10],required" />
+                <input type="text" placeholder="Enter Middle Name" name="mname" data-bvalidator="maxlength[10],required" />
+                <input type="text" placeholder="Enter Last Name" name="lname" data-bvalidator="maxlength[10],required" />
+                <input type="password" placeholder="Password" name="pass" id="equalto1" />
+                <input type="password" placeholder="Confirm Password" name="c_pass" data-bvalidator="equalto[equalto1],required" />
+                <input type="text" placeholder="Email Address" name="email" data-bvalidator="email,required" /><label style="color:red;">@Html.Raw(TempData["eid"])</label>
+                <input type="tel" placeholder="Phone Number" name="mob" data-bvalidator="number,minlength[10],maxlength[10],required" />
+                <label>
+                    City
+                </label>
+                <select name="city" style="margin-bottom:10px;height:50px;width:200px;">
+
+
+                    <option value="Surat" selected>Surat</option>
+                    <option value="Navsari">Navsari</option>
+                    <option value="Bharuch">Bharuch</option>
+                    <option value="valsad">valsad</option>
+                    <option value="vapi">vapi</option>
+
+                </select><br />
+
+                <label class="for">Male</label>
+                <input type="radio" class="form-control" style="margin-left:-120px;margin-top:-12px;" name="gender" value="Male" checked />
+                <label>Female</label>
+                <input type="radio" class="form-control" style="margin-left:-120px; margin-top:-13px;" name="gender" value="Female" />
+                <input type="text" placeholder="Date Of Birth" id="dob" name="User_S_DOB" data-bvalidator="date[mm/dd/yyyy],required" />
+                <input type="text" placeholder="Address" name="add" data-bvalidator="required" />
+                <input type="text" placeholder="Pincode" name="pin" data-bvalidator="number,minlength[6],maxlength[6],required" />
+
+
+                <button>Sign Up</button>
+                <button type="reset" style="margin-top:15px;" value="Reset">Reset</button>
+
+            }
+        </div>
+        <div class="cta"></div>
+        <a href="@Url.Action("UserLogin","UserHome")"><button>Sign IN</button></a>
+
+    </div>
+
+
+
+
+    <script src='@Url.Content("js/index.js")'></script>
+    <link href="~/Dr_finder_tmp/DatePicker/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Dr_finder_tmp/DatePicker/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#dob').datepicker({
+                changeYear: true,
+                changeMonth: true,
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

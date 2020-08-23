@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "UShowDoctorFullDetails";
+    Layout = "~/Views/Shared/User_panel_LayoutPage.cshtml";
+}
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   
+    <title>User profile form requirement</title>
+    
+</head>
+
+<body>
+    
+        @foreach (var item in ViewData["usdfd"] as List<Dr.finder_project.Controllers.DrDetails>)
+        {
+            <div class="container">
+                <br />
+                <div class="col-lg-offset-7">
+                    <div class="col-lg-6">
+                        <h3><label style="color:brown;">Doctor Details </label></h3>
+                        <label class="form-control" style="height:50%;">
+                            <img src="~/Images/@item.Doctor_Image" style="height:100%;width:100%;" />
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <br />
+                            <div class="col-lg-6">
+                                <div class="col-lg-offset-3">
+                                    <label style="margin-top:5px;">First Name</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6" style="margin-bottom:1%">
+                                <div class="col-lg-6">
+                                    <label class="form-control">@item.Doctor_fname</label>
+                                </div>
+                            </div>
+                    
+
+                            <div class="col-sm-6">
+                                <div class="col-lg-offset-3">
+                                    <label style="margin-top:5px;">Middel Name</label>
+                                </div>
+                            </div>
+
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <label class="form-control">@item.Doctor_mname</label>
+                        </div>
+                    </div>
+
+                            <div class="col-sm-6">
+                                <div class="col-lg-offset-3">
+                                    <label style="margin-top:5px;">Last Name</label>
+                                </div>
+                            </div>
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <label class="form-control">@item.Doctor_lname</label>
+                        </div>
+                    </div>
+
+                            <div class="col-sm-6">
+                                <div class="col-lg-offset-3">
+                                    <label style="margin-top:5px;">Mobile No</label>
+                                </div>
+                            </div>
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <label class="form-control">@item.Doctor_Mobile_No</label>
+                        </div>
+                    </div>
+                
+                    
+
+                    <div class="col-sm-6">
+                        <div class="col-lg-offset-3">
+                            <label style="margin-top:5px;">Email ID</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <label class="form-control">@item.Doctor_Email_Id</label>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-sm-6">
+                        <div class="col-lg-offset-3">
+                            <label style="margin-top:5px;">Gender</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <label class="form-control">@item.Doctor_gender</label>
+                        </div>
+                    </div>
+
+                         
+
+                    <div class="col-sm-6">
+                        <div class="col-lg-offset-3">
+                            <label style="margin-top:5px;">Experiance(Years)</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <label class="form-control">@item.Doctor_Experience</label>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="col-lg-offset-3">
+                            <label style="margin-top:5px;">Doctor Type Name</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6" style="margin-bottom:1%">
+                        <div class="col-lg-6">
+                            <label class="form-control">@item.Doctor_Type_Name</label>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        }
+            
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "AssignAppointment";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+
+<link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "pagingType": "full_numbers"
+        });
+    });
+</script>
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        
+            <div class="table-responsive">
+                <h2 style="color:brown;">Assing Appointment </h2>
+                <br />
+                <table class="table table-striped" id="example">
+                    <thead>
+                        <tr style="background-color:brown;border:hidden;">
+                            <th style="color:white;"> Patient Name</th>
+                            <th style="color:white;">
+                                Appointment Date
+                            </th>
+                            <th style="color:white;">
+                                Booking Date
+                            </th>
+                            <th style="color:white;">
+                                Appointment Description
+                            </th>
+                            <th style="color:white;">
+                                Assign
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewData["vappas"] as List<Dr.finder_project.Controllers.appDetails>)
+                        {
+
+                            <tr>
+                                <td>@item.User_S_mName</td>
+                                <td> @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Appointment_Date))</td>
+
+                                <td>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Appointment_Current_Date))</td>
+
+                                <td>@item.Appointment_Description</td>
+
+                                <td>
+                                    <a href="@Url.Action("viewAssignAppointment", "Hospital", new { id = item.Appointment_Id })">
+                                        <input type="button" value="Assign" style="color:white;background-color:brown;border:hidden;" />
+                                    </a>
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+            @Html.Raw(TempData["asi"])
+        </div>
+    </div>
+

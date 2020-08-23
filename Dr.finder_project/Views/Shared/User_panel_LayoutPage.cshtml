@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src='@Url.Content("~/Dr_finder_tmp/User_penal/User_Tmp/js/jquery-1.11.1.min.js")'></script>
+    <script src='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js")'></script>
+    <link href='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css")' rel="stylesheet" />
+    <link href='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css")' rel="stylesheet" />
+    @{
+        if (Session["Username"]==null)
+        {
+            Html.Action("UserLogin", "UserHome");
+        }
+         }
+    
+    
+    <link href="~/Dr_finder_tmp/User_penal/User_Tmp/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="~/Dr_finder_tmp/User_penal/User_Tmp/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    
+    <script src="~/Dr_finder_tmp/Admin_penal/web/js/bootstrap.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling-->
+    <script type="text/javascript" src="~/Dr_finder_tmp/User_penal/User_Tmp/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Dr_finder_tmp/User_penal/User_Tmp/js/easing.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+    </script>
+    <!--//end-smoth-scrolling-->
+
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#form1').bValidator();
+    });
+    </script>
+
+</head>
+<body>
+
+    <h1>@ViewBag.s</h1>
+    <!--header-->
+    <div class="header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.html"><img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/DoctorFinder_logo_final.png" style="width:200px;height:100px;" alt="logo" /></a>
+               @{ string str = Session["Username"].ToString();}
+                
+
+            </div>
+            <div class="header-info">
+                welcome to @str
+                <p>Information Service:</p>
+                <h4>8000012790</h4>
+            </div>
+            <div class="clearfix"> </div>
+        </div>  
+    </div>
+    <!--//header-->
+    <!--header-bottom-->
+    <div class="header-bottom">
+        <div class="container">
+            <!--top-nav-->
+            <div class="top-nav cl-effect-5">
+                <span class="menu-icon"><img src="~/Dr_finder_tmp/User_penal/User_Tmp/images/menu-icon.png" alt="" /></span>
+                    <ul class="nav1">
+      
+                          <li><a href="@Url.Action("UserIndex","UserHome")">
+                                  <span data-hover='Home'>Home</span>
+  
+                                </a>
+                       
+                         </li>
+                        <li><a href="@Url.Action("UviewHospital","UserHome")"> <span data-hover="View Hospital">View Hospital</span></a></li>
+                        <li><a href="@Url.Action("BookApp", "UserHome")"> <span data-hover="Book Appointment">Book Appointment</span></a></li>
+                        <li><a href="@Url.Action("viewprofile","UserHome")"> <span data-hover="Edit Profile">Edit Profile</span></a></li>
+                        <li><a href="@Url.Action("Appstatus","UserHome")"> <span data-hover="Appointment status info">Appointment status info</span></a></li>
+                        <li><a href="@Url.Action("Search", "UserHome")"> <span data-hover="Search">Search</span></a></li>
+                        <li><a href="@Url.Action("UserLogout","UserHome")"> <span data-hover="logout">logout</span></a></li>
+                        @*<li><a href="contact.html"> <span data-hover="Contact">Contact</span></a></li>*@
+                    </ul>
+                    <!-- script-for-menu -->
+                    <script>
+                        $("span.menu-icon").click(function () {
+                            $("ul.nav1").slideToggle(300, function () {
+                                // Animation complete.
+                            });
+                        });
+                    </script>
+                    <!-- /script-for-menu -->
+</div>
+            <!--//top-nav-->
+          
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+   <!--//footer-->
+    <div class="footer-bottom">
+        <div class="container">
+            <p>Copyright © 2017 Doctor finder. All rights reserved | Design by <a href="#">Group No 22</a></p>
+        </div>
+    </div>
+    <!--smooth-scrolling-of-move-up-->
+    <script type="text/javascript">
+            $(document).ready(function () {
+
+                $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <!--//smooth-scrolling-of-move-up-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+
+
+</body>
+</html>

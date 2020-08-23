@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Login Form </title>
+
+
+
+
+
+
+    <script src='@Url.Content("~/Scripts/jquery-1.8.2.min.js")'></script>
+    <script src="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js"></script>
+    <link rel="stylesheet" href='@Url.Content("~/Dr_finder_tmp/UserLogin and reg/css/style.css")'>
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css" rel="stylesheet" />
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#form1').bValidator();
+        });
+    </script>
+    <div class="pen-title">
+
+        <h1>Sign In Form</h1>
+
+
+    </div>
+
+    <!-- Form Module-->
+    <div class="module form-module">
+        <div class="">
+            @Html.Raw(TempData["wrong"])
+            @Html.Raw(TempData["ureg"])
+        </div>
+        <div class="form">
+            <h2>Sign In to your account</h2>
+            @using (Html.BeginForm("UserLogin", "UserHome", FormMethod.Post, new { id = "form1" }))
+            {
+
+                <input type="text" placeholder="Username" name="uname" data-bvalidator="email,required" />
+                <input type="password" placeholder="Password" name="pass" data-bvalidator="required" />
+                <button>Sign In</button>
+
+            }
+        </div>
+
+        <div class="cta"><a href="@Url.Action("ForgetPassUser", "UserHome")">Forgot your password?</a></div>
+        <a href="@Url.Action("UserReg","UserHome")"><button>Sign Up</button></a>
+    </div>
+
+
+
+
+    <script src='@Url.Content("js/index.js")'></script>
+
+
+
+
+
+
+</body>
+
+</html>

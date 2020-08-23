@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "viewAssignAppointment";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="head-t" style="background-color:brown;color:white;width:85%;margin:0%;">
+        <h4 style="margin-left:1%;"> Assign Form:</h4>
+    </div>
+    <br />
+   
+        <div class="col-lg-10">
+            @{var item = ViewData["assignview"] as Dr.finder_project.EDM.viewapp_Result;}
+
+
+            @using (Html.BeginForm("viewAssignAppointment","Hospital", FormMethod.Post, new { id = "form-control" }))
+            {
+
+                <div class="col-lg-10" style="margin-bottom:3%;">
+                    <div class="col-lg-5">
+                        <label style="color:brown;">
+                            Appiontmet Date
+                        </label>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <label style="color:black;">
+                            @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Appointment_Date))
+                        </label>
+                    </div>
+                </div>
+                
+                
+    <div class="col-lg-10" style="margin-bottom:3%;">
+        <div class="col-lg-5">
+            <label style="color:brown;margin-top:1%;">
+                Boking Date
+            </label>
+        </div>
+
+        <div class="col-lg-5" style="color:black;margin-top :1%;">
+            <label>
+                @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Appointment_Current_Date))
+            </label>
+        </div>
+    </div>
+    <div class="col-lg-10" style="margin-bottom:3%;">
+        <div class="col-lg-5">
+            <label style="color:brown;margin-top:1%;">
+                Doctors List
+            </label>
+
+        </div>
+        <div class="col-lg-5">
+            
+                <select class="form-control" name="drn">
+                    @foreach (var item1 in ViewData["drname"] as List<Dr.finder_project.EDM.tbldrview_Result>)
+                    {
+                        <option value="@item1.Doctor_Id">@item1.Doctor_mname</option>
+                        
+                    }
+                </select>
+            
+        </div>
+
+    </div>
+
+    <div class="col-lg-10" style="margin-bottom:3%;">
+        <div class="col-lg-5">
+            <label style="color:brown;margin-top:1%;">
+                Appointment Description
+            </label>
+        </div>
+
+        <div class="col-lg-5" style="color:black;margin-top :1%;">
+            <label>
+                @item.Appointment_Description
+            </label>
+        </div>
+
+        </div>
+    <div class="col-lg-10" style="margin-bottom:3%;">
+        <div class="col-lg-5" style="margin:3%;">
+            <input type="submit" value="Assign" style="background-color:brown;color:white;border:0px;height:35px;width:100px;" />
+        </div>
+    </div>
+    <input type="hidden" name="apid" value="@item.Appointment_Id" />
+    <input type="hidden"  name="uid" value="@item.User_S_Id"/>
+            }
+
+    </div>
+
+</div>

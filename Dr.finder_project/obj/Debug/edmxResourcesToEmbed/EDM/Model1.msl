@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Dr_finderModelStoreContainer" CdmEntityContainer="Dr_finderEntities3">
+    <EntitySetMapping Name="Appointment_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Appointment_tbl">
+        <MappingFragment StoreEntitySet="Appointment_tbl">
+          <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+          <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+          <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assign_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Assign_tbl">
+        <MappingFragment StoreEntitySet="Assign_tbl">
+          <ScalarProperty Name="Assign_Id" ColumnName="Assign_Id" />
+          <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificate_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Certificate_tbl">
+        <MappingFragment StoreEntitySet="Certificate_tbl">
+          <ScalarProperty Name="Certificate_Id" ColumnName="Certificate_Id" />
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Certificate_Image" ColumnName="Certificate_Image" />
+          <ScalarProperty Name="Certificate_Details" ColumnName="Certificate_Details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Doctor_tbl">
+        <MappingFragment StoreEntitySet="Doctor_tbl">
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Doctor_fname" ColumnName="Doctor_fname" />
+          <ScalarProperty Name="Doctor_mname" ColumnName="Doctor_mname" />
+          <ScalarProperty Name="Doctor_lname" ColumnName="Doctor_lname" />
+          <ScalarProperty Name="Doctor_Image" ColumnName="Doctor_Image" />
+          <ScalarProperty Name="Doctor_Mobile_No" ColumnName="Doctor_Mobile_No" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Doctor_Type_Id" ColumnName="Doctor_Type_Id" />
+          <ScalarProperty Name="Doctor_gender" ColumnName="Doctor_gender" />
+          <ScalarProperty Name="Doctor_Email_Id" ColumnName="Doctor_Email_Id" />
+          <ScalarProperty Name="Doctor_password" ColumnName="Doctor_password" />
+          <ScalarProperty Name="Doctor_Status" ColumnName="Doctor_Status" />
+          <ScalarProperty Name="Doctor_Experience" ColumnName="Doctor_Experience" />
+          <ScalarProperty Name="Doctor_Address" ColumnName="Doctor_Address" />
+          <ScalarProperty Name="Doctor_reg_date" ColumnName="Doctor_reg_date" />
+          <ScalarProperty Name="Doctor_city" ColumnName="Doctor_city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor_Type_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Doctor_Type_tbl">
+        <MappingFragment StoreEntitySet="Doctor_Type_tbl">
+          <ScalarProperty Name="Doctor_Type_Id" ColumnName="Doctor_Type_Id" />
+          <ScalarProperty Name="Doctor_Type_Name" ColumnName="Doctor_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facility_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Facility_tbl">
+        <MappingFragment StoreEntitySet="Facility_tbl">
+          <ScalarProperty Name="Facility_Id" ColumnName="Facility_Id" />
+          <ScalarProperty Name="Facility_Name" ColumnName="Facility_Name" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Facility_Description" ColumnName="Facility_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospital_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Hospital_tbl">
+        <MappingFragment StoreEntitySet="Hospital_tbl">
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Hospital_Name" ColumnName="Hospital_Name" />
+          <ScalarProperty Name="Hospital_Image" ColumnName="Hospital_Image" />
+          <ScalarProperty Name="Hospital_Mobile_No" ColumnName="Hospital_Mobile_No" />
+          <ScalarProperty Name="Hospital_Email_Id" ColumnName="Hospital_Email_Id" />
+          <ScalarProperty Name="Hospital_Address" ColumnName="Hospital_Address" />
+          <ScalarProperty Name="Hospital_Discription" ColumnName="Hospital_Discription" />
+          <ScalarProperty Name="Hospital_Status" ColumnName="Hospital_Status" />
+          <ScalarProperty Name="Hospital_password" ColumnName="Hospital_password" />
+          <ScalarProperty Name="Hospital_reg_date" ColumnName="Hospital_reg_date" />
+          <ScalarProperty Name="Hospital_city" ColumnName="Hospital_city" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Review_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.Review_tbl">
+        <MappingFragment StoreEntitySet="Review_tbl">
+          <ScalarProperty Name="Review_Id" ColumnName="Review_Id" />
+          <ScalarProperty Name="Review_Description" ColumnName="Review_Description" />
+          <ScalarProperty Name="No_Of_Rating" ColumnName="No_Of_Rating" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_s_tbl">
+      <EntityTypeMapping TypeName="Dr_finderModel.User_s_tbl">
+        <MappingFragment StoreEntitySet="User_s_tbl">
+          <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+          <ScalarProperty Name="User_S_fName" ColumnName="User_S_fName" />
+          <ScalarProperty Name="User_S_mName" ColumnName="User_S_mName" />
+          <ScalarProperty Name="User_s_lName" ColumnName="User_s_lName" />
+          <ScalarProperty Name="User_S_Email_Id" ColumnName="User_S_Email_Id" />
+          <ScalarProperty Name="User_S_Password" ColumnName="User_S_Password" />
+          <ScalarProperty Name="User_S_Mobile_No" ColumnName="User_S_Mobile_No" />
+          <ScalarProperty Name="User_S_Gender" ColumnName="User_S_Gender" />
+          <ScalarProperty Name="User_S_Address" ColumnName="User_S_Address" />
+          <ScalarProperty Name="User_S_Pincode" ColumnName="User_S_Pincode" />
+          <ScalarProperty Name="User_S_DOB" ColumnName="User_S_DOB" />
+          <ScalarProperty Name="User_S_City" ColumnName="User_S_City" />
+          <ScalarProperty Name="User_reg_date" ColumnName="User_reg_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="app_chk_st" FunctionName="Dr_finderModel.Store.app_chk_st">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Dr_finderModel.app_chk_st_Result">
+          <ScalarProperty Name="User_S_mName" ColumnName="User_S_mName" />
+          <ScalarProperty Name="Hospital_Name" ColumnName="Hospital_Name" />
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+          <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+          <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Book_app" FunctionName="Dr_finderModel.Store.Book_app" />
+    <FunctionImportMapping FunctionImportName="insassign" FunctionName="Dr_finderModel.Store.insassign" />
+    <FunctionImportMapping FunctionImportName="tbldrview" FunctionName="Dr_finderModel.Store.tbldrview">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Dr_finderModel.tbldrview_Result">
+          <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+          <ScalarProperty Name="Doctor_fname" ColumnName="Doctor_fname" />
+          <ScalarProperty Name="Doctor_mname" ColumnName="Doctor_mname" />
+          <ScalarProperty Name="Doctor_lname" ColumnName="Doctor_lname" />
+          <ScalarProperty Name="Doctor_Image" ColumnName="Doctor_Image" />
+          <ScalarProperty Name="Doctor_Mobile_No" ColumnName="Doctor_Mobile_No" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Doctor_Type_Id" ColumnName="Doctor_Type_Id" />
+          <ScalarProperty Name="Doctor_gender" ColumnName="Doctor_gender" />
+          <ScalarProperty Name="Doctor_Email_Id" ColumnName="Doctor_Email_Id" />
+          <ScalarProperty Name="Doctor_password" ColumnName="Doctor_password" />
+          <ScalarProperty Name="Doctor_Status" ColumnName="Doctor_Status" />
+          <ScalarProperty Name="Doctor_Experience" ColumnName="Doctor_Experience" />
+          <ScalarProperty Name="Doctor_Address" ColumnName="Doctor_Address" />
+          <ScalarProperty Name="Doctor_reg_date" ColumnName="Doctor_reg_date" />
+          <ScalarProperty Name="Doctor_city" ColumnName="Doctor_city" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="upapp" FunctionName="Dr_finderModel.Store.upapp" />
+    <FunctionImportMapping FunctionImportName="viewapp" FunctionName="Dr_finderModel.Store.viewapp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Dr_finderModel.viewapp_Result">
+          <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+          <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+          <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="viewdrasapp" FunctionName="Dr_finderModel.Store.viewdrasapp">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Dr_finderModel.viewdrasapp_Result">
+          <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+          <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+          <ScalarProperty Name="User_S_fName" ColumnName="User_S_fName" />
+          <ScalarProperty Name="User_s_lName" ColumnName="User_s_lName" />
+          <ScalarProperty Name="User_S_mName" ColumnName="User_S_mName" />
+          <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+          <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+          <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

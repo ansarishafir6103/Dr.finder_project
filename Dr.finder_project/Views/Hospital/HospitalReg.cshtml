@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+
+@*<!DOCTYPE html>*@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HospitalReg</title>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="~/Dr_finder_tmp/hospital login_registration/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href="~/Dr_finder_tmp/hospital login_registration/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome icons -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- //web font -->
+    <!-- jS -->
+    <script src="~/Dr_finder_tmp/hospital login_registration/js/jquery.min.js"></script>
+    <script src="~/Dr_finder_tmp/hospital login_registration/js/script.js"></script>
+    @*<link rel="stylesheet" href="~/Dr_finder_tmp/User_side_Login_and_sign/css/style.css">*@
+    <!-- //js -->
+    <script src="~/Dr_finder_tmp/Admin_penal/web/js/bootstrap.min.js"></script>
+    <link href="~/Dr_finder_tmp/Admin_penal/web/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js"></script>
+    <link rel="stylesheet" href='@Url.Content("~/Dr_finder_tmp/UserLogin and reg/css/style.css")'>
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css" rel="stylesheet" />
+    <link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css" rel="stylesheet" />
+
+</head>
+<body style="background-color:#f88a83;">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#signin').bValidator();
+        });
+    </script>
+    <div>
+        <div class="main-agile">
+            <h1 style="color:white;text-align:match-parent;margin-left:-100px;">Hospital Sign Up</h1>
+            <div id="w3ls_form" class="signin-form" style="height:1000px;width:600px;">
+                <!-- Sign In Form -->
+                @using (Html.BeginForm("HospitalReg", "Hospital", FormMethod.Post, new { @id = "signin", enctype = "multipart/form-data" }))
+                {
+
+                    <div class="ribbon"><a href="@Url.Action("HospitalLogin","Hospital")" title="Click Here to signin">Sign In</a></div>
+                    <h3>Sign Up Form</h3>
+                    <input type="text" name="Hos_Name" placeholder="Hospital Name" data-bvalidator="alpha,minlength[10],required" />
+                    <label class="btn btn-default btn-file" style="padding:10px;width:390px;">
+
+                        <input type="file" name="file" id="file" data-bvalidator="extension[jpg:png:txt],required" data-bvalidator-msg="Please select file of type .jpg, .png" />
+                    </label>
+                    <br />
+                    <br />
+                    <input type="text" name="Hos_Mob_No" placeholder="Hospital Mobile No" id="phoneno" data-bvalidator="number,minlength[10],maxlength[10],required" />
+                    <input type="text" name="Hos_Email" placeholder="Hospital Email" data-bvalidator="email,required" />
+
+                    <label>@Html.Raw(TempData["hemail"])</label>
+                    <input type="password" name="Password" id="equalto1" placeholder="Password" style="margin:10px;margin-left:-2px;" />
+                    <input type="password" name="c_password" placeholder="confirm password" data-bvalidator="equalto[equalto1],required" />
+
+                    <select name="city" class="form-control" style="margin-top:10px;width:92%;">
+
+                        <option value="Surat" selected>Surat</option>
+                        <option value="Navsari">Navsari</option>
+                        <option value="Bharuch">Bharuch</option>
+                        <option value="valsad">valsad</option>
+                        <option value="vapi">vapi</option>
+
+                    </select>
+                    <input type="text" name="Hos_Add" placeholder="Hospital Address" style="margin:10px;margin-left:-2px;" data-bvalidator="required,required" />
+                    <input type="text" name="Hos_Des" placeholder="Hospital Description" data-bvalidator="required,required" />
+                    <input type="checkbox" id="brand1" value="" />
+                    <label for="brand1"><span></span>I accept the terms of use</label>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="submit" name="Submit" value="SIGN UP">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="reset" name="Submit" value="Reset" class="btn btn-primary" style="height:41px;width:120px;">
+                        </div>
+
+                    </div>
+                    <div class="clear"> </div>
+                }
+                <!-- //Sign In Form -->
+                <!-- Sign up Form-->
+                @*@using (Html.BeginForm("Hospitalsignup", "Hospital", FormMethod.Post, new { @id = "signup" }))
+                    {
+                        <div class="ribbon"><a href="#" id="flipToRecover1" class="flipLink" title="Click Here to signin">Sign In</a></div>
+                        <h3>Sign Up Form</h3>
+                        <input type="text" name="Hospital_Name" placeholder="Hospital Name" required="" />
+                        <label class="label">Hospital Image</label>
+                        <input type="file" name="Hos_Image" placeholder="Hospital Name" required="" />
+                        <input type="text" name="Hos_Mob_No" placeholder="Hospital Mobile No" required="" />
+                        <input type="text" name="Hos_Email" placeholder="Hospital Email" required="" />
+                        <input type="text" name="Hos_Add" placeholder="Hospital Address" required="" />
+                        <input type="password" name="Password" placeholder="Password" required="" />
+                        <input type="checkbox" id="brand1" value="">
+                        <label for="brand1"><span></span>I accept the terms of use</label>
+                        <input type="submit" value="SIGN UP">
+                    }*@
+                <!-- Sign up Form-->
+            </div>
+            <!-- copyright -->
+            <div class="copyright" style="margin-top:-100px;margin-left:-100px;">
+                <p> © 2017 Hospital Sign In Form . All rights reserved | Design by <a href="http://#" target="_blank">group No 22</a></p>
+            </div>
+            <!-- //copyright -->
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+
+<meta name="viewport" content="width=device-width" />
+<title>HospitalLogin</title>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="~/Dr_finder_tmp/hospital login_registration/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- font-awesome icons -->
+<link href="~/Dr_finder_tmp/hospital login_registration/css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- //web font -->
+<!-- jS -->
+<script src="~/Dr_finder_tmp/hospital login_registration/js/jquery.min.js"></script>
+<script src="~/Dr_finder_tmp/hospital login_registration/js/script.js"></script>
+<script src="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js"></script>
+<link rel="stylesheet" href='@Url.Content("~/Dr_finder_tmp/UserLogin and reg/css/style.css")'>
+<link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css" rel="stylesheet" />
+<link href="~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css" rel="stylesheet" />
+
+<!-- //js -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#signin').bValidator();
+    });
+</script>
+<div>
+    <!-- main -->
+    <div class="main-agile" style="background-color:#f88a83;">
+        <h1>Hospital Login </h1>
+        <center><span style="color:white;">@ViewBag.msg</span>@Html.Raw(TempData["dn"])</center>
+        <div id="w3ls_form" class="signin-form" style="height:500px;">
+            <!-- Sign In Form -->
+            @using (Html.BeginForm("HospitalLogin", "Hospital", FormMethod.Post, new { @id = "signin" }))
+            {
+
+                <div class="ribbon"><a href="@Url.Action("HospitalReg","Hospital")" id="flipToRecover" title="Click Here to SignUp">Sign Up</a></div>
+                <h2>Sign In Form</h2>
+
+                <input type="text" name="User_Name" placeholder="User Name" data-bvalidator="email,required" />
+                <input type="password" name="Password" placeholder="Password" data-bvalidator="required" />
+                <input type="checkbox" id="brand" value="">
+                <label for="brand"><span></span> Remember me ?</label>
+                <input type="submit" value="SIGN IN">
+
+                <div class="signin-agileits-bottom">
+                    <p><a href="@Url.Action("forgetpwd", "Hospital")">Forgot Password ?</a></p>
+                </div>
+                <div class="social-grids">
+                    @*<div class="social-text">
+                            <p>Or Sign in with</p>
+                        </div>*@
+                    @*<div class="social-icons">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+                        </div>*@
+                    <div class="clear"> </div>
+                </div>
+            }
+            <!-- Sign up Form-->
+        </div>
+        <!-- copyright -->
+        <div class="copyright">
+            <p> © 2017 Doctor Finder . All rights reserved | Design by <a href="#" target="_blank">Group No 22</a></p>
+        </div>
+        <!-- //copyright -->
+    </div>
+    <!-- //main -->
+</div>

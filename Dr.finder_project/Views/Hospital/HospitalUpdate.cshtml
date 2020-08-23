@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "HospitalUpdate";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="jumbotron">
+        @Html.Raw(TempData["update"])
+        @Html.Raw(TempData["himg"])
+    <div class="table-responsive">
+        <table class="table table-striped">
+
+            <tr>
+                <th style="color:brown;" colspan="3"><h3>----Hospital Details----</h3></th>
+            </tr>
+            @{var item = ViewData["Hprofile"] as Dr.finder_project.EDM.Hospital_tbl;}
+
+
+            <tr>
+
+                <td colspan="3">
+                    
+                        <img src="~/Images/@item.Hospital_Image" style="height:100px;width:100px;">
+                    <a href="@Url.Action("Changimg","Hospital", new { id = item.Hospital_Id, v = item.Hospital_Image, id2 = item.Hospital_Id})">
+                        change profile picture
+                    </a>
+                </td>
+
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>
+                    @item.Hospital_Name
+                </td>
+                <td><a href="@Url.Action("EditProfile","Hospital", new { id = item.Hospital_Id, v = item.Hospital_Name, chg = "name", id2 = item.Hospital_Id})">Edit</a></td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td>
+                    @item.Hospital_Mobile_No
+                </td>
+                <td><a href="@Url.Action("EditProfile","Hospital", new { id = item.Hospital_Id, v = item.Hospital_Mobile_No, chg = "no", id2 = item.Hospital_Id})">Edit</a></td>    
+            </tr>
+            <tr>
+                <th>Email ID</th>
+                <td colspan="2">
+                    @item.Hospital_Email_Id
+                </td>
+                
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>
+                    @item.Hospital_Address
+                </td>
+                <td><a href="@Url.Action("EditProfile","Hospital", new { id = item.Hospital_Id, v = item.Hospital_Address, chg = "address", id2 = item.Hospital_Id})">Edit</a></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td colspan="2">
+                    @item.Hospital_Discription
+                </td>
+                
+            </tr>
+           
+        </table>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th style="color:brown;" colspan="3"><h3>----Facility Details----</h3></th>
+            </tr>
+
+            @foreach (var item1 in ViewData["vf"] as List<Dr.finder_project.EDM.Facility_tbl>)
+            {
+                <tr>
+                    <th> Facility Name</th>
+                    <td>
+                        @item1.Facility_Name
+                    </td>
+                </tr>
+                <tr>
+                    <th>Facility Description</th>
+                    <td>
+                        @item1.Facility_Description
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+    </div>
+      </div>
+   </div>
+</body>
+</html>
+

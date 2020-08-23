@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "EditHospitalProfile";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+@{var item = ViewData["ht"] as Dr.finder_project.EDM.Hospital_tbl;}
+<div class="container-fluid">
+
+    <h1>Edit Profile</h1>
+    <hr>
+
+    <div class="row">
+        <!-- left column -->
+        @using (Html.BeginForm("EditHospitalProfile", "Admin", FormMethod.Post, new { id ="form1", @class = "form-horizontal", @role = "form", enctype = "multipart/form-data" }))
+        {
+            <div class="col-md-3">
+
+                <div class="text-center">
+                    <img src="~/Images/@item.Hospital_Image" class="avatar img-circle" alt="avatar" style="height:150px;width:150px;">
+                    <h6>Upload a different photo...</h6>
+
+                    <input type="file" class="form-control" name="file" value="@item.Hospital_Image" data-bvalidator="extension[jpg:png:txt],required" data-bvalidator-msg="Please select file of type .jpg, .png" />
+                </div>
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+                <div class="alert alert-info alert-dismissable">
+                    <a class="panel-close close" data-dismiss="alert">×</a>
+                    <i class="fa fa-coffee"></i>
+                    This is an <strong>.alert</strong>. Use this to show important messages to the Admin.
+                </div>
+                <h3>Personal info</h3>
+
+                @*<form class="form-horizontal" role="form">*@
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="@item.Hospital_Name" name="hname" data-bvalidator="alpha,minlength[10],required" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Phone number:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="@item.Hospital_Mobile_No" name="phone" data-bvalidator="number,minlength[10],maxlength[10],required" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Address</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="@item.Hospital_Address" name="address" data-bvalidator="required" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" value="@item.Hospital_Email_Id" name="email" data-bvalidator="email,required" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">City</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="@item.Hospital_city" name="city" data-bvalidator="required" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Description</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" value="@item.Hospital_Discription" name="desc" data-bvalidator="required" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="submit" class="btn btn-primary" value="Save Changes">
+                        <span></span>
+                        <input type="reset" class="btn btn-default" value="Cancel">
+
+                    </div>
+                    <input type="hidden" value="@item.Hospital_Id" name="hid" />
+                </div>
+                @*</form>*@
+
+            </div>
+        }
+        </div>
+        
+    </div>
+    <hr>
+
+

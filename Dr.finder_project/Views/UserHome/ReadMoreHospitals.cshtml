@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "ReadMoreHospitals";
+    Layout = "~/Views/Shared/User_panel_LayoutPage.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="col-lg-10">
+        
+        <table class="table table-responsive" style="width:50%;" align="center">
+            <thead></thead>
+            <tr>
+                <th style="color:brown;" colspan="2">
+                    <h3>
+                        ----Hospital Details----
+                    </h3>
+                </th>
+            </tr>
+
+            @{var item = ViewData["hmd"] as Dr.finder_project.EDM.Hospital_tbl;}
+            <tr>
+                <th colspan="2" style="color:black;">
+                    Hospital Image<br />
+                    <img src="~/Images/@item.Hospital_Image" style="width:50%;" />
+                    
+                </th>
+            </tr>
+
+
+            <tr>
+                <th style="color:black">
+                    Hosoital Name:-
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Name
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Mobile No:-
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Mobile_No
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Email:-
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Email_Id:-
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Address
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Address
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Description
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Discription
+                </td>
+            </tr>
+
+
+        </table>
+
+        <table class="table table-responsive" style="width:50%;" align="center">
+            <tr>
+                <th style="color:brown;" colspan="2">
+                    <h3>
+                        ----Hospital facility Details ----
+                    </h3>
+                </th>
+            </tr>
+            @foreach (var item1 in ViewData["hmf"] as List<Dr.finder_project.EDM.Facility_tbl>)
+            {
+
+
+                <tr>
+                    <th style="color:black;">
+                        Facility Name:-
+                    </th>
+                    <td style="color:black;">
+                        @item1.Facility_Name
+                    </td>
+                </tr>
+                <tr>
+                    <th style="color:black;">
+                        Facility Description:-
+                    </th>
+                    <td style="color:black;">
+                        @item1.Facility_Description
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

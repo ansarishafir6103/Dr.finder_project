@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+@Html.Raw(TempData["key1"]);
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ForgetPassUser</title>
+    <script src='@Url.Content("~/Dr_finder_tmp/User_penal/User_Tmp/js/jquery-1.11.1.min.js")'></script>
+    <script src='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/jquery.bvalidator.js")'></script>
+    <link href='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/bvalidator.css")' rel="stylesheet" />
+    <link href='@Url.Content("~/Dr_finder_tmp/Admin_penal/bValidator-0.73/themes/bvalidator.theme.bootstrap.rc.css")' rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#form1').bValidator();
+        });
+    </script>
+
+    <script src="~/Dr_finder_tmp/Admin_penal/web/js/bootstrap.min.js"></script>
+    <link href="~/Dr_finder_tmp/Admin_penal/web/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container-fluid">
+
+        @using (Html.BeginForm("ForgetPassUser", "UserHome", FormMethod.Post, new { id = "form1", @role = "form" }))
+        {
+            <div class="container">
+
+                <div class="inner container" style="margin-top:100px;">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="col-lg-9 pull-right">
+                                <div class="col-lg-8>
+                            <div class=" page-content vertical-align-middle">
+                                    <h2>Forgot Your Password ?</h2>
+                                    <p>Input your registered email and Moble Num to reset your password</p>
+                                    @*<form method="post" role="form">*@
+                                    <div class="form-group">
+                                        <input class="form-control" id="inputEmail" name="email" placeholder="Your Email..." type="text" data-bvalidator="email,required" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" name="phone" placeholder="Your Mobile No..." type="text" data-bvalidator="number,minlength[10],maxlength[10],required" />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <a href="@Url.Action("UserLogin","UserHome")">
+                                                    <input type="button" class="btn btn-danger btn-block" value="Back" />
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <footer class="page-copyright">
+                                        <p>WEBSITE BY Group No 22</p>
+                                        <p>© 2017. All RIGHT RESERVED.</p>
+
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</body>
+</html>

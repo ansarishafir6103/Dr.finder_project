@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "EdituserData";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+@using (Html.BeginForm("EdituserData", "Admin", FormMethod.Post, new { id = "form1", @class = "form-horizontal", role = "form" }))
+{
+
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>Edit Profile</h1>
+            <hr>
+            @{var item = ViewData["usr"] as Dr.finder_project.EDM.User_s_tbl;}
+            <div class="row">
+
+
+                <!-- edit form column -->
+                <div class="col-md-9 personal-info">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a>
+                        <i class="fa fa-coffee"></i>
+                        This is an <strong>.alert</strong>. Use this to show important messages to
+
+                        the Admin.
+                    </div>
+                    <h3>Personal info</h3>
+
+                    @*<form class="form-horizontal" role="form">*@
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">first name:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" value="@item.User_S_fName" name="fname" data-bvalidator="maxlength[10],required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Middel name:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" value="@item.User_S_mName" name="mname" data-bvalidator="maxlength[10],required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Last name</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" value="@item.User_s_lName" name="lname" data-bvalidator="maxlength[10],required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Email:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" value="@item.User_S_Email_Id" name="email" data-bvalidator="email,required" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Mobile Number</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" value="@item.User_S_Mobile_No" name="mob" data-bvalidator="number,minlength[10],maxlength[10],required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Date of Birth</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" value="@item.User_S_DOB" name="dob" data-bvalidator="date[mm/dd/yyyy],required" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">City</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" value="@item.User_S_City" name="city" data-bvalidator="required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Address</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" value="@item.User_S_Address" name="address" data-bvalidator="required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Pincode</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" value="@item.User_S_Pincode" name="pin" data-bvalidator="number,minlength[6],maxlength[6],required" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-8">
+                            <input type="submit" class="btn btn-primary" value="Save Changes">
+                            <span></span>
+                            <input type="reset" class="btn btn-default" value="Cancel">
+                        </div>
+                    </div>
+                    @*</form>*@
+                </div>
+                <input type="hidden" name="uid" value="@item.User_S_Id" />
+            </div>
+        </div>
+    </div>
+    <hr>
+}
+

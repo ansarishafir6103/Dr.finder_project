@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Dr_finderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appointment_tbl">
+          <Key>
+            <PropertyRef Name="Appointment_Id" />
+          </Key>
+          <Property Name="Appointment_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Appointment_Date" Type="varchar" MaxLength="50" />
+          <Property Name="Appointment_Current_Date" Type="varchar" MaxLength="50" />
+          <Property Name="Appointment_Description" Type="varchar(max)" />
+          <Property Name="Appointment_Status" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Assign_tbl">
+          <Key>
+            <PropertyRef Name="Assign_Id" />
+          </Key>
+          <Property Name="Assign_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Appointment_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Certificate_tbl">
+          <Key>
+            <PropertyRef Name="Certificate_Id" />
+          </Key>
+          <Property Name="Certificate_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Certificate_Image" Type="varchar(max)" />
+          <Property Name="Certificate_Details" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Doctor_tbl">
+          <Key>
+            <PropertyRef Name="Doctor_Id" />
+          </Key>
+          <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Doctor_fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Doctor_mname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Doctor_lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Doctor_Image" Type="varchar(max)" />
+          <Property Name="Doctor_Mobile_No" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Doctor_Type_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Doctor_gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Doctor_Email_Id" Type="varchar(max)" />
+          <Property Name="Doctor_password" Type="varchar(max)" />
+          <Property Name="Doctor_Status" Type="varchar(max)" />
+          <Property Name="Doctor_Experience" Type="nvarchar(max)" />
+          <Property Name="Doctor_Address" Type="nvarchar(max)" />
+          <Property Name="Doctor_reg_date" Type="varchar" MaxLength="50" />
+          <Property Name="Doctor_city" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Doctor_Type_tbl">
+          <Key>
+            <PropertyRef Name="Doctor_Type_Id" />
+          </Key>
+          <Property Name="Doctor_Type_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Doctor_Type_Name" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Facility_tbl">
+          <Key>
+            <PropertyRef Name="Facility_Id" />
+          </Key>
+          <Property Name="Facility_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Facility_Name" Type="varchar(max)" />
+          <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Facility_Description" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Hospital_tbl">
+          <Key>
+            <PropertyRef Name="Hospital_Id" />
+          </Key>
+          <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hospital_Name" Type="varchar(max)" />
+          <Property Name="Hospital_Image" Type="varchar(max)" />
+          <Property Name="Hospital_Mobile_No" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="Hospital_Email_Id" Type="varchar(max)" />
+          <Property Name="Hospital_Address" Type="varchar(max)" />
+          <Property Name="Hospital_Discription" Type="varchar(max)" />
+          <Property Name="Hospital_Status" Type="varchar(max)" />
+          <Property Name="Hospital_password" Type="varchar(max)" />
+          <Property Name="Hospital_reg_date" Type="varchar" MaxLength="50" />
+          <Property Name="Hospital_city" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Review_tbl">
+          <Key>
+            <PropertyRef Name="Review_Id" />
+          </Key>
+          <Property Name="Review_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Review_Description" Type="varchar(max)" />
+          <Property Name="No_Of_Rating" Type="int" />
+          <Property Name="Review_Date" Type="date" />
+          <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="User_s_tbl">
+          <Key>
+            <PropertyRef Name="User_S_Id" />
+          </Key>
+          <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_S_fName" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_S_mName" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_s_lName" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_S_Email_Id" Type="varchar(max)" />
+          <Property Name="User_S_Password" Type="varchar(max)" />
+          <Property Name="User_S_Mobile_No" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="User_S_Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_S_Address" Type="varchar(max)" />
+          <Property Name="User_S_Pincode" Type="numeric" Precision="6" Scale="0" />
+          <Property Name="User_S_DOB" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_S_City" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_reg_date" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="app_chk_st" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Book_app" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="qpp_date" Type="varchar" Mode="In" />
+          <Parameter Name="qpp_cur_date" Type="varchar" Mode="In" />
+          <Parameter Name="hos_id" Type="numeric" Mode="In" />
+          <Parameter Name="u_id" Type="numeric" Mode="In" />
+          <Parameter Name="qpp_desc" Type="varchar(max)" Mode="In" />
+          <Parameter Name="qpp_status" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="insassign" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="aid" Type="int" Mode="In" />
+          <Parameter Name="uid" Type="int" Mode="In" />
+          <Parameter Name="hid" Type="int" Mode="In" />
+          <Parameter Name="drid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="tbldrview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="st" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="upapp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ch" Type="int" Mode="In" />
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="status" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="viewapp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ch" Type="int" Mode="In" />
+          <Parameter Name="hid" Type="int" Mode="In" />
+          <Parameter Name="status" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="viewdrasapp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="drid" Type="int" Mode="In" />
+          <Parameter Name="status" Type="varchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="Dr_finderModelStoreContainer">
+          <EntitySet Name="Appointment_tbl" EntityType="Self.Appointment_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Assign_tbl" EntityType="Self.Assign_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Certificate_tbl" EntityType="Self.Certificate_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor_tbl" EntityType="Self.Doctor_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctor_Type_tbl" EntityType="Self.Doctor_Type_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facility_tbl" EntityType="Self.Facility_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hospital_tbl" EntityType="Self.Hospital_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Review_tbl" EntityType="Self.Review_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_s_tbl" EntityType="Self.User_s_tbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Dr_finderModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Appointment_tbl">
+          <Key>
+            <PropertyRef Name="Appointment_Id" />
+          </Key>
+          <Property Name="Appointment_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hospital_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="User_S_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Appointment_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Appointment_Current_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Appointment_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Appointment_Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Assign_tbl">
+          <Key>
+            <PropertyRef Name="Assign_Id" />
+          </Key>
+          <Property Name="Assign_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Appointment_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Doctor_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Hospital_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="User_S_Id" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Certificate_tbl">
+          <Key>
+            <PropertyRef Name="Certificate_Id" />
+          </Key>
+          <Property Name="Certificate_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Doctor_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Certificate_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Certificate_Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Doctor_tbl">
+          <Key>
+            <PropertyRef Name="Doctor_Id" />
+          </Key>
+          <Property Name="Doctor_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Doctor_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_mname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Doctor_Mobile_No" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Hospital_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Doctor_Type_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Doctor_gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_Email_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Doctor_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Doctor_Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Doctor_Experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Doctor_reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Doctor_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Doctor_Type_tbl">
+          <Key>
+            <PropertyRef Name="Doctor_Type_Id" />
+          </Key>
+          <Property Name="Doctor_Type_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Doctor_Type_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Facility_tbl">
+          <Key>
+            <PropertyRef Name="Facility_Id" />
+          </Key>
+          <Property Name="Facility_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Facility_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Facility_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Hospital_tbl">
+          <Key>
+            <PropertyRef Name="Hospital_Id" />
+          </Key>
+          <Property Name="Hospital_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hospital_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_Mobile_No" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Hospital_Email_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_Discription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Hospital_city" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Review_tbl">
+          <Key>
+            <PropertyRef Name="Review_Id" />
+          </Key>
+          <Property Name="Review_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Review_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="No_Of_Rating" Type="Int32" />
+          <Property Name="Review_Date" Type="DateTime" Precision="0" />
+          <Property Name="User_S_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Hospital_Id" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Doctor_Id" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="User_s_tbl">
+          <Key>
+            <PropertyRef Name="User_S_Id" />
+          </Key>
+          <Property Name="User_S_Id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_S_fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_S_mName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_s_lName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_S_Email_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_S_Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_S_Mobile_No" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="User_S_Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_S_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_S_Pincode" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="User_S_DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_S_City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_reg_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Dr_finderEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appointment_tbl" EntityType="Self.Appointment_tbl" />
+          <EntitySet Name="Assign_tbl" EntityType="Self.Assign_tbl" />
+          <EntitySet Name="Certificate_tbl" EntityType="Self.Certificate_tbl" />
+          <EntitySet Name="Doctor_tbl" EntityType="Self.Doctor_tbl" />
+          <EntitySet Name="Doctor_Type_tbl" EntityType="Self.Doctor_Type_tbl" />
+          <EntitySet Name="Facility_tbl" EntityType="Self.Facility_tbl" />
+          <EntitySet Name="Hospital_tbl" EntityType="Self.Hospital_tbl" />
+          <EntitySet Name="Review_tbl" EntityType="Self.Review_tbl" />
+          <EntitySet Name="User_s_tbl" EntityType="Self.User_s_tbl" />
+          <FunctionImport Name="app_chk_st" ReturnType="Collection(Dr_finderModel.app_chk_st_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Book_app">
+            <Parameter Name="qpp_date" Mode="In" Type="String" />
+            <Parameter Name="qpp_cur_date" Mode="In" Type="String" />
+            <Parameter Name="hos_id" Mode="In" Type="Decimal" />
+            <Parameter Name="u_id" Mode="In" Type="Decimal" />
+            <Parameter Name="qpp_desc" Mode="In" Type="String" />
+            <Parameter Name="qpp_status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insassign">
+            <Parameter Name="aid" Mode="In" Type="Int32" />
+            <Parameter Name="uid" Mode="In" Type="Int32" />
+            <Parameter Name="hid" Mode="In" Type="Int32" />
+            <Parameter Name="drid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="tbldrview" ReturnType="Collection(Dr_finderModel.tbldrview_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="st" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="upapp">
+            <Parameter Name="ch" Mode="In" Type="Int32" />
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="viewapp" ReturnType="Collection(Dr_finderModel.viewapp_Result)">
+            <Parameter Name="ch" Mode="In" Type="Int32" />
+            <Parameter Name="hid" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="viewdrasapp" ReturnType="Collection(Dr_finderModel.viewdrasapp_Result)">
+            <Parameter Name="drid" Mode="In" Type="Int32" />
+            <Parameter Name="status" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="app_chk_st_Result">
+          <Property Type="String" Name="User_S_mName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Hospital_Name" Nullable="true" />
+          <Property Type="String" Name="Appointment_Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Appointment_Current_Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Appointment_Description" Nullable="true" />
+          <Property Type="String" Name="Appointment_Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="tbldrview_Result">
+          <Property Type="Decimal" Name="Doctor_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="Doctor_fname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Doctor_mname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Doctor_lname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Doctor_Image" Nullable="true" />
+          <Property Type="Decimal" Name="Doctor_Mobile_No" Nullable="true" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="Hospital_Id" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Doctor_Type_Id" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Doctor_gender" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Doctor_Email_Id" Nullable="true" />
+          <Property Type="String" Name="Doctor_password" Nullable="true" />
+          <Property Type="String" Name="Doctor_Status" Nullable="true" />
+          <Property Type="String" Name="Doctor_Experience" Nullable="true" />
+          <Property Type="String" Name="Doctor_Address" Nullable="true" />
+          <Property Type="String" Name="Doctor_reg_date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Doctor_city" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="viewapp_Result">
+          <Property Type="Decimal" Name="Appointment_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Hospital_Id" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="User_S_Id" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Appointment_Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Appointment_Current_Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Appointment_Description" Nullable="true" />
+          <Property Type="String" Name="Appointment_Status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="viewdrasapp_Result">
+          <Property Type="String" Name="Appointment_Status" Nullable="true" />
+          <Property Type="Decimal" Name="Appointment_Id" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="User_S_fName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="User_s_lName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="User_S_mName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Appointment_Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Appointment_Current_Date" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Appointment_Description" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Dr_finderModelStoreContainer" CdmEntityContainer="Dr_finderEntities3">
+          <EntitySetMapping Name="Appointment_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Appointment_tbl">
+              <MappingFragment StoreEntitySet="Appointment_tbl">
+                <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+                <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+                <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+                <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Assign_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Assign_tbl">
+              <MappingFragment StoreEntitySet="Assign_tbl">
+                <ScalarProperty Name="Assign_Id" ColumnName="Assign_Id" />
+                <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+                <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Certificate_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Certificate_tbl">
+              <MappingFragment StoreEntitySet="Certificate_tbl">
+                <ScalarProperty Name="Certificate_Id" ColumnName="Certificate_Id" />
+                <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+                <ScalarProperty Name="Certificate_Image" ColumnName="Certificate_Image" />
+                <ScalarProperty Name="Certificate_Details" ColumnName="Certificate_Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctor_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Doctor_tbl">
+              <MappingFragment StoreEntitySet="Doctor_tbl">
+                <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+                <ScalarProperty Name="Doctor_fname" ColumnName="Doctor_fname" />
+                <ScalarProperty Name="Doctor_mname" ColumnName="Doctor_mname" />
+                <ScalarProperty Name="Doctor_lname" ColumnName="Doctor_lname" />
+                <ScalarProperty Name="Doctor_Image" ColumnName="Doctor_Image" />
+                <ScalarProperty Name="Doctor_Mobile_No" ColumnName="Doctor_Mobile_No" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="Doctor_Type_Id" ColumnName="Doctor_Type_Id" />
+                <ScalarProperty Name="Doctor_gender" ColumnName="Doctor_gender" />
+                <ScalarProperty Name="Doctor_Email_Id" ColumnName="Doctor_Email_Id" />
+                <ScalarProperty Name="Doctor_password" ColumnName="Doctor_password" />
+                <ScalarProperty Name="Doctor_Status" ColumnName="Doctor_Status" />
+                <ScalarProperty Name="Doctor_Experience" ColumnName="Doctor_Experience" />
+                <ScalarProperty Name="Doctor_Address" ColumnName="Doctor_Address" />
+                <ScalarProperty Name="Doctor_reg_date" ColumnName="Doctor_reg_date" />
+                <ScalarProperty Name="Doctor_city" ColumnName="Doctor_city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctor_Type_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Doctor_Type_tbl">
+              <MappingFragment StoreEntitySet="Doctor_Type_tbl">
+                <ScalarProperty Name="Doctor_Type_Id" ColumnName="Doctor_Type_Id" />
+                <ScalarProperty Name="Doctor_Type_Name" ColumnName="Doctor_Type_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facility_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Facility_tbl">
+              <MappingFragment StoreEntitySet="Facility_tbl">
+                <ScalarProperty Name="Facility_Id" ColumnName="Facility_Id" />
+                <ScalarProperty Name="Facility_Name" ColumnName="Facility_Name" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="Facility_Description" ColumnName="Facility_Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hospital_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Hospital_tbl">
+              <MappingFragment StoreEntitySet="Hospital_tbl">
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="Hospital_Name" ColumnName="Hospital_Name" />
+                <ScalarProperty Name="Hospital_Image" ColumnName="Hospital_Image" />
+                <ScalarProperty Name="Hospital_Mobile_No" ColumnName="Hospital_Mobile_No" />
+                <ScalarProperty Name="Hospital_Email_Id" ColumnName="Hospital_Email_Id" />
+                <ScalarProperty Name="Hospital_Address" ColumnName="Hospital_Address" />
+                <ScalarProperty Name="Hospital_Discription" ColumnName="Hospital_Discription" />
+                <ScalarProperty Name="Hospital_Status" ColumnName="Hospital_Status" />
+                <ScalarProperty Name="Hospital_password" ColumnName="Hospital_password" />
+                <ScalarProperty Name="Hospital_reg_date" ColumnName="Hospital_reg_date" />
+                <ScalarProperty Name="Hospital_city" ColumnName="Hospital_city" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Review_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.Review_tbl">
+              <MappingFragment StoreEntitySet="Review_tbl">
+                <ScalarProperty Name="Review_Id" ColumnName="Review_Id" />
+                <ScalarProperty Name="Review_Description" ColumnName="Review_Description" />
+                <ScalarProperty Name="No_Of_Rating" ColumnName="No_Of_Rating" />
+                <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+                <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_s_tbl">
+            <EntityTypeMapping TypeName="Dr_finderModel.User_s_tbl">
+              <MappingFragment StoreEntitySet="User_s_tbl">
+                <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+                <ScalarProperty Name="User_S_fName" ColumnName="User_S_fName" />
+                <ScalarProperty Name="User_S_mName" ColumnName="User_S_mName" />
+                <ScalarProperty Name="User_s_lName" ColumnName="User_s_lName" />
+                <ScalarProperty Name="User_S_Email_Id" ColumnName="User_S_Email_Id" />
+                <ScalarProperty Name="User_S_Password" ColumnName="User_S_Password" />
+                <ScalarProperty Name="User_S_Mobile_No" ColumnName="User_S_Mobile_No" />
+                <ScalarProperty Name="User_S_Gender" ColumnName="User_S_Gender" />
+                <ScalarProperty Name="User_S_Address" ColumnName="User_S_Address" />
+                <ScalarProperty Name="User_S_Pincode" ColumnName="User_S_Pincode" />
+                <ScalarProperty Name="User_S_DOB" ColumnName="User_S_DOB" />
+                <ScalarProperty Name="User_S_City" ColumnName="User_S_City" />
+                <ScalarProperty Name="User_reg_date" ColumnName="User_reg_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="app_chk_st" FunctionName="Dr_finderModel.Store.app_chk_st">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Dr_finderModel.app_chk_st_Result">
+                <ScalarProperty Name="User_S_mName" ColumnName="User_S_mName" />
+                <ScalarProperty Name="Hospital_Name" ColumnName="Hospital_Name" />
+                <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+                <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+                <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Book_app" FunctionName="Dr_finderModel.Store.Book_app" />
+          <FunctionImportMapping FunctionImportName="insassign" FunctionName="Dr_finderModel.Store.insassign" />
+          <FunctionImportMapping FunctionImportName="tbldrview" FunctionName="Dr_finderModel.Store.tbldrview">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Dr_finderModel.tbldrview_Result">
+                <ScalarProperty Name="Doctor_Id" ColumnName="Doctor_Id" />
+                <ScalarProperty Name="Doctor_fname" ColumnName="Doctor_fname" />
+                <ScalarProperty Name="Doctor_mname" ColumnName="Doctor_mname" />
+                <ScalarProperty Name="Doctor_lname" ColumnName="Doctor_lname" />
+                <ScalarProperty Name="Doctor_Image" ColumnName="Doctor_Image" />
+                <ScalarProperty Name="Doctor_Mobile_No" ColumnName="Doctor_Mobile_No" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="Doctor_Type_Id" ColumnName="Doctor_Type_Id" />
+                <ScalarProperty Name="Doctor_gender" ColumnName="Doctor_gender" />
+                <ScalarProperty Name="Doctor_Email_Id" ColumnName="Doctor_Email_Id" />
+                <ScalarProperty Name="Doctor_password" ColumnName="Doctor_password" />
+                <ScalarProperty Name="Doctor_Status" ColumnName="Doctor_Status" />
+                <ScalarProperty Name="Doctor_Experience" ColumnName="Doctor_Experience" />
+                <ScalarProperty Name="Doctor_Address" ColumnName="Doctor_Address" />
+                <ScalarProperty Name="Doctor_reg_date" ColumnName="Doctor_reg_date" />
+                <ScalarProperty Name="Doctor_city" ColumnName="Doctor_city" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="upapp" FunctionName="Dr_finderModel.Store.upapp" />
+          <FunctionImportMapping FunctionImportName="viewapp" FunctionName="Dr_finderModel.Store.viewapp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Dr_finderModel.viewapp_Result">
+                <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="User_S_Id" ColumnName="User_S_Id" />
+                <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+                <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+                <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="viewdrasapp" FunctionName="Dr_finderModel.Store.viewdrasapp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Dr_finderModel.viewdrasapp_Result">
+                <ScalarProperty Name="Appointment_Status" ColumnName="Appointment_Status" />
+                <ScalarProperty Name="Appointment_Id" ColumnName="Appointment_Id" />
+                <ScalarProperty Name="User_S_fName" ColumnName="User_S_fName" />
+                <ScalarProperty Name="User_s_lName" ColumnName="User_s_lName" />
+                <ScalarProperty Name="User_S_mName" ColumnName="User_S_mName" />
+                <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+                <ScalarProperty Name="Appointment_Current_Date" ColumnName="Appointment_Current_Date" />
+                <ScalarProperty Name="Appointment_Description" ColumnName="Appointment_Description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

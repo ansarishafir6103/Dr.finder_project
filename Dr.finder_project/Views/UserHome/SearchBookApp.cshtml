@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "SearchBookApp";
+    Layout = "~/Views/Shared/User_panel_LayoutPage.cshtml";
+}
+
+<html>
+<head>
+    <title>book app</title>
+    <link href="~/Dr_finder_tmp/DatePicker/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Dr_finder_tmp/DatePicker/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#example-date-input').datepicker({
+                //dateFormat: "MM-dd-yy"
+
+                minDate: -0,
+                maxDate: "+1M + 10D",
+                changeYear: true,
+                changeMonth: true,
+
+
+
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+    @using (Html.BeginForm("SearchBookApp", "UserHome", FormMethod.Post, new { id="form1"}))
+    {
+        <div class="container">
+            <br />
+            @{var item = ViewData["sba"] as Dr.finder_project.EDM.Hospital_tbl;}
+            <div class="col-lg-12">
+                <div class="col-lg-10">
+                    <div class="col-lg-offset-3">
+                        <h2> <label for="exampleTextarea" style="color:#10a086;"> Appointment Form:</label></h2>
+                    </div>
+
+                    <br />
+                    <br />
+
+
+
+                    <div class="col-lg-offset-3">
+
+                        <div class="form-group">
+                            <h4> <label for="exampleTextarea" style="color:#10a086;">Appointment Discription</label></h4>
+                            <textarea class="form-control" id="exampleTextarea" name="app_desc" rows="3" placeholder="Enter yuor Problems" data-bvalidator="required"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-offset-3">
+
+                        <div class="form-group">
+                            <h4> <label for="exampleTextarea" style="color:#10a086;">Appointment Date</label></h4>
+                            <input class="form-control" type="text" name="Appointment_Date" id="example-date-input" placeholder="select Date" data-bvalidator="date[mm/dd/yyyy],required">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-offset-3">
+
+                        <div class="form-group">
+                            <h4> <label for="exampleSelect2" style="color:#10a086;">Hospital Name</label></h4>
+                            <input type="hidden" name="hoid" id="hhid" />
+                            <select class="form-control" name="hos_id" id="h_id" data-bvalidator="required">
+                                <option value="@item.Hospital_Id">@item.Hospital_Name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="col-lg-offset-3">
+                        <div class="col-lg-5">
+                            <input class="form-control" type="submit" value="Confirm" id="example-date-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+</body>
+</html>

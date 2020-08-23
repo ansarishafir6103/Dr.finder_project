@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "AddCertificate";
+    Layout = "~/Views/Shared/Doctor_Layout.cshtml";
+}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>User profile form requirement</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+    <!-- Bootstrap Core CSS -->
+    <!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 ">
+                
+                    @using (Html.BeginForm("AddCertificate", "Doctor", FormMethod.Post, new {id="form1", @class = "form-horizontal", enctype = "multipart/form-data" }))
+                    {
+                        
+                    
+                    <fieldset>  
+
+                        <!-- Form Name -->
+                        <legend>Add Doctor Certificate Details</legend>
+
+                        <!-- Text input-->
+                    
+
+                        <!-- File Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Upload photo">Add Certificate Image</label>
+                            <div class="col-md-4">
+                                <input id="Upload photo" name="c_image" class="input-file" type="file" data-bvalidator="extension[jpg:png:txt],required" data-bvalidator-msg="Please select file of type .jpg, .png">
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="Overview (max 200 words)">Certificate Details (max 200 words)</label>
+                            <div class="col-md-4">
+                                <textarea class="form-control" rows="10" id="Overview (max 200 words)" name="c_details" data-bvalidator="required"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"></label>
+                            <div class="col-md-4">
+                                @*<a href="" class="btn btn-success"><span class="glyphicon glyphicon-thumbs-up"></span><input type="submit" value="submit" /></a>*@
+                                <input type="submit" value="Submit" />
+                                
+                                @Html.Raw(TempData["drcrt"])
+                            </div>
+                        </div>
+
+                    </fieldset>
+                    }
+                
+            </div>
+    
+
+        </div>
+    </div>
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

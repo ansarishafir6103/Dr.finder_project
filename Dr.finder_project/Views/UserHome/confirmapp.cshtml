@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "confirmapp";
+    Layout = "~/Views/Shared/User_panel_LayoutPage.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "pagingType": "full_numbers"
+            });
+        });
+    </script>
+
+    <div class="container-fluid">
+
+        <div class="row" style="margin-top:10px;margin-bottom:10px;">
+            <div class="col-xs-4 text-center text-info" style="height:30px;font-size:x-large;">
+                <a href="@Url.Action("Appstatus","UserHome")">Pending Appointnent</a>
+            </div>
+            <div class="col-xs-4 text-center" style="height:30px;font-size:x-large;">
+                <a href="@Url.Action("confirmapp","UserHome")"> Confirm Appointment</a>
+            </div>
+            <div class="col-xs-4 text-center" style="height:30px;font-size:x-large;">
+                <a href="@Url.Action("CompletedApp", "UserHome")"> Completed Appointment</a>
+            </div>
+        </div>
+
+        @{ var str = Session["Username"];}
+        @{
+            if (Session["Username"] == null)
+            {
+                Url.Action("UserLogin", "UserHome");
+            }
+        }
+        <div class="jumbotron">
+            <div class="table-responsive">
+
+                <h2>All Conform Appointment Details</h2>
+                <table class="table" id="example">
+                    <thead>
+                        <tr class="info">
+                            <th>Your Name</th>
+                            <th>Doctor Name</th>
+                            <th>Hospital Name</th>
+                            <th>Appointment Date</th>
+                            <th>Booking Date</th>
+                            <th>Description</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewData["apst_ass"] as List<Dr.finder_project.Controllers.ass_record>)
+                        {
+                            <tr>
+                                <td>@str</td>
+                                <td>@item.dr_name</td>
+                                <td>@item.Hospital_Name</td>
+                                <td>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Appointment_Date))</td>
+                                <td>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.Appointment_Current_Date))</td>
+                                <td>@item.Appointment_Description</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

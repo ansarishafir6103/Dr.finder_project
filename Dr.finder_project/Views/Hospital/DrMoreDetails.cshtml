@@ -1,0 +1,186 @@
+﻿@{
+    ViewBag.Title = "DrMoreDetails";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+   
+
+</head>
+
+<body>
+   
+        @foreach (var item in ViewData["drmoreDetails"] as List<Dr.finder_project.Controllers.DrDetails>)
+        {
+            
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 ">
+
+
+                            <div class="col-md-2 hidden-xs" style="margin:1%;">
+                                <img src="~/Images/@item.Doctor_Image" class="img-responsive img-thumbnail ">
+                            </div>
+
+
+                            <form class="form-horizontal">
+                                <fieldset>
+
+                                    <!-- Form Name -->
+                                    <legend>Doctor Details</legend>
+
+                                    <!-- Text input-->
+
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;"> First Name</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+
+                                                @item.Doctor_fname
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;"> Middel Name</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+
+                                                @item.Doctor_mname
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;"> Last Name</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+
+                                                @item.Doctor_lname
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;"> Mobile Number</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+
+                                                @item.Doctor_Mobile_No
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;">Email ID</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+                                                @item.Doctor_Email_Id
+
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;"> Status:</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+
+                                                @item.Doctor_Status
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Multiple Radios (inline) -->
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="Gender" style="color:brown;">Gender</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="Gender-0">
+                                                @item.Doctor_gender
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="Gender" style="color:brown;">Experiance(Years)</label>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline" for="Gender-0">
+                                                @item.Doctor_Experience
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;"> Doctor Type Name </label>
+                                        <div cslass="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+                                                @item.Doctor_Type_Name
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios" style="color:brown;"> Doctor Address </label>
+                                        <div cslass="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+                                                @item.Doctor_Address
+
+                                            </label>
+
+                                        </div>
+                                    </div>
+                                     @foreach (var item1 in ViewData["vcrt"] as List<Dr.finder_project.EDM.Certificate_tbl>)
+            {
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="radios">certificate Detail</label>
+                                        <div cslass="col-md-4">
+                                            <label class="radio-inline" for="radios-0">
+                                           @item1.Certificate_Details
+                                            </label>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Certificate Image</label>
+                                        <div class="col-md-4">
+                                            <img src="~/Images/@item1.Certificate_Image" style="height:200px;width:200px;" />   
+
+
+                                        </div>
+                                    </div>
+        
+                                     }
+                                </fieldset>
+                            </form>
+
+                        </div>
+                     
+                    </div>
+                </div>
+     }
+    
+</body>
+
+</html>

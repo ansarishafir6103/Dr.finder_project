@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "ViewFacility";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+
+
+<link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "pagingType": "full_numbers"
+        });
+    });
+</script>
+
+
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h3 class="text-danger">---facility Info---</h3>
+        <div class="table-responsive">
+            <table class="table table-striped" id="example">
+                <thead>
+                    <tr>
+                        <th>
+                            Facility Name
+                        </th>
+                        <th>
+                            facility description
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewData["vf"] as List<Dr.finder_project.EDM.Facility_tbl>)
+                    {
+
+
+                        <tr>
+                            <td>
+                                @item.Facility_Name
+                            </td>
+                            <td>
+                                @item.Facility_Description
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

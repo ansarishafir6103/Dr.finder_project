@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Dr_finderModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appointment_tbl">
+    <Key>
+      <PropertyRef Name="Appointment_Id" />
+    </Key>
+    <Property Name="Appointment_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Appointment_Date" Type="varchar" MaxLength="50" />
+    <Property Name="Appointment_Current_Date" Type="varchar" MaxLength="50" />
+    <Property Name="Appointment_Description" Type="varchar(max)" />
+    <Property Name="Appointment_Status" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Assign_tbl">
+    <Key>
+      <PropertyRef Name="Assign_Id" />
+    </Key>
+    <Property Name="Assign_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Appointment_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Certificate_tbl">
+    <Key>
+      <PropertyRef Name="Certificate_Id" />
+    </Key>
+    <Property Name="Certificate_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Certificate_Image" Type="varchar(max)" />
+    <Property Name="Certificate_Details" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Doctor_tbl">
+    <Key>
+      <PropertyRef Name="Doctor_Id" />
+    </Key>
+    <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doctor_fname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doctor_mname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doctor_lname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doctor_Image" Type="varchar(max)" />
+    <Property Name="Doctor_Mobile_No" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Doctor_Type_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Doctor_gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doctor_Email_Id" Type="varchar(max)" />
+    <Property Name="Doctor_password" Type="varchar(max)" />
+    <Property Name="Doctor_Status" Type="varchar(max)" />
+    <Property Name="Doctor_Experience" Type="nvarchar(max)" />
+    <Property Name="Doctor_Address" Type="nvarchar(max)" />
+    <Property Name="Doctor_reg_date" Type="varchar" MaxLength="50" />
+    <Property Name="Doctor_city" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Doctor_Type_tbl">
+    <Key>
+      <PropertyRef Name="Doctor_Type_Id" />
+    </Key>
+    <Property Name="Doctor_Type_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Doctor_Type_Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Facility_tbl">
+    <Key>
+      <PropertyRef Name="Facility_Id" />
+    </Key>
+    <Property Name="Facility_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Facility_Name" Type="varchar(max)" />
+    <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Facility_Description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Hospital_tbl">
+    <Key>
+      <PropertyRef Name="Hospital_Id" />
+    </Key>
+    <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hospital_Name" Type="varchar(max)" />
+    <Property Name="Hospital_Image" Type="varchar(max)" />
+    <Property Name="Hospital_Mobile_No" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Hospital_Email_Id" Type="varchar(max)" />
+    <Property Name="Hospital_Address" Type="varchar(max)" />
+    <Property Name="Hospital_Discription" Type="varchar(max)" />
+    <Property Name="Hospital_Status" Type="varchar(max)" />
+    <Property Name="Hospital_password" Type="varchar(max)" />
+    <Property Name="Hospital_reg_date" Type="varchar" MaxLength="50" />
+    <Property Name="Hospital_city" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Review_tbl">
+    <Key>
+      <PropertyRef Name="Review_Id" />
+    </Key>
+    <Property Name="Review_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Review_Description" Type="varchar(max)" />
+    <Property Name="No_Of_Rating" Type="int" />
+    <Property Name="Review_Date" Type="date" />
+    <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Hospital_Id" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Doctor_Id" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="User_s_tbl">
+    <Key>
+      <PropertyRef Name="User_S_Id" />
+    </Key>
+    <Property Name="User_S_Id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_S_fName" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_S_mName" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_s_lName" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_S_Email_Id" Type="varchar(max)" />
+    <Property Name="User_S_Password" Type="varchar(max)" />
+    <Property Name="User_S_Mobile_No" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="User_S_Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_S_Address" Type="varchar(max)" />
+    <Property Name="User_S_Pincode" Type="numeric" Precision="6" Scale="0" />
+    <Property Name="User_S_DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_S_City" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_reg_date" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="app_chk_st" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Book_app" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="qpp_date" Type="varchar" Mode="In" />
+    <Parameter Name="qpp_cur_date" Type="varchar" Mode="In" />
+    <Parameter Name="hos_id" Type="numeric" Mode="In" />
+    <Parameter Name="u_id" Type="numeric" Mode="In" />
+    <Parameter Name="qpp_desc" Type="varchar(max)" Mode="In" />
+    <Parameter Name="qpp_status" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="insassign" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="aid" Type="int" Mode="In" />
+    <Parameter Name="uid" Type="int" Mode="In" />
+    <Parameter Name="hid" Type="int" Mode="In" />
+    <Parameter Name="drid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="tbldrview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="st" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="upapp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ch" Type="int" Mode="In" />
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="status" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="viewapp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ch" Type="int" Mode="In" />
+    <Parameter Name="hid" Type="int" Mode="In" />
+    <Parameter Name="status" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="viewdrasapp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="drid" Type="int" Mode="In" />
+    <Parameter Name="status" Type="varchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="Dr_finderModelStoreContainer">
+    <EntitySet Name="Appointment_tbl" EntityType="Self.Appointment_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Assign_tbl" EntityType="Self.Assign_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Certificate_tbl" EntityType="Self.Certificate_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor_tbl" EntityType="Self.Doctor_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor_Type_tbl" EntityType="Self.Doctor_Type_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facility_tbl" EntityType="Self.Facility_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hospital_tbl" EntityType="Self.Hospital_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Review_tbl" EntityType="Self.Review_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_s_tbl" EntityType="Self.User_s_tbl" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

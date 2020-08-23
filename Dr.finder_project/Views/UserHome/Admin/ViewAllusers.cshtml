@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "ViewAllusers";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+    <title>Untitled Document</title>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h2>ViewAllusers</h2>
+            <table class="table table-striped" id="example" border="0">
+                <thead style="background-color:brown;color:white;">
+                    <tr>
+                        <th>User Name</th>
+                        <th>Email ID</th>
+                        <th>Mobile No</th>
+                        <th>ReadMore</th>
+                        <th>Edit</th>
+                        <th>Block</th>
+                    </tr>
+                </thead>
+                <tfoot style="background-color:brown;">
+                    <tr>
+                        <td colspan="6" align="center"></td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in ViewData["vusers"] as List<Dr.finder_project.EDM.User_s_tbl>)
+                    {
+
+
+                        <tr>
+                            <td>@item.User_S_mName</td>
+                            <td>@item.User_S_Email_Id</td>
+                            <td>@item.User_S_Mobile_No</td>
+                            <td><a href="@Url.Action("ReadMoreUesrInfo", "Admin", new {id=item.User_S_Id })" class="btn btn-danger">Read More</a></td>
+                            <td><a href="@Url.Action("EdituserData","Admin", new { id = item.User_S_Id })" class="btn btn-danger">Edit</a></td>
+                            <td><a href="@Url.Action("Bolckuser", "Admin", new {id=item.User_S_Id })" class="btn btn-danger">Block</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <script type="text/javascript" src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('#example').DataTable({
+                        "pagingType": "full_numbers"
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

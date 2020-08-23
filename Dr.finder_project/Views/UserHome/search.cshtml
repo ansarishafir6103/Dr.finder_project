@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "search";
+    Layout = "~/Views/Shared/User_panel_LayoutPage.cshtml";
+}
+
+<link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+<div class="container">
+    <div class="col-lg-12" style=" margin:0px;">
+        <br />
+        <table id="example" border="0">
+
+            <thead>
+                <tr>
+                    <th>Hospital Image</th>
+                    <th>Hos Name</th>
+                    <th>Contact</th>
+                    <th>Book Appointment</th>
+                    <th>Read More</th>
+                </tr>
+            </thead>
+           
+            <tbody>
+                @foreach (var item in ViewData["Uview_a"] as List<Dr.finder_project.EDM.Hospital_tbl>)
+                {
+
+                    <tr>
+                        <td><img src="~/Images/@item.Hospital_Image" class="img-responsive zoom-img " style="height:250px;width:250px;" alt=""></td>
+                        <td><h4>@item.Hospital_Name</h4></td>
+                        <td>@item.Hospital_Mobile_No</td>
+                        <td><a href="@Url.Action("SearchBookApp","UserHome", new {id=item.Hospital_Id,id2=item.Hospital_Id})">Book Appointment</a></td>
+                        <td><a href="@Url.Action("ReadMoreHospitals","UserHome", new {id=item.Hospital_Id })" class="btn btn-success">Read More</a></td>
+                    </tr>
+
+
+                }
+            </tbody>
+        </table>
+        @*<script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>*@
+        <script type="text/javascript" src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#example').DataTable({
+                    "pagingType": "full_numbers"
+                });
+            });
+        </script>
+
+    </div>
+
+</div>

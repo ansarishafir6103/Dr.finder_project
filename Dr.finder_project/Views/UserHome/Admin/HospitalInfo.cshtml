@@ -1,0 +1,179 @@
+﻿@{
+    ViewBag.Title = "HospitalInfo";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<link href="~/Dr_finder_tmp/Admin_penal/web/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" />
+<div class="container">
+    <div class="col-lg-12">
+        <table class="table table-responsive" style="width:50%;" align="center">
+            <thead></thead>
+            <tr>
+                <th style="color:brown;" colspan="2">
+                    <h3>
+                        ----Hospital Details----
+                    </h3>
+                </th>
+            </tr>
+
+            @{var item = ViewData["hmd"] as Dr.finder_project.EDM.Hospital_tbl;}
+            <tr>
+                <th colspan="2" style="color:black;">
+                    Hospital Image<br />
+                    <img src="~/Images/@item.Hospital_Image" style="width:50%;" />
+
+                </th>
+            </tr>
+
+
+            <tr>
+                <th style="color:black">
+                    Hosoital Name:-
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Name
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Mobile No:-
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Mobile_No
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Email:-
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Email_Id:-
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Address
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Address
+                </td>
+            </tr>
+            <tr>
+                <th style="color:black">
+                    Hospital Description
+                </th>
+                <td style="color:black">
+                    @item.Hospital_Discription
+                </td>
+            </tr>
+
+
+        </table>
+
+        <table class="table table-responsive" style="width:50%;" align="center">
+            <tr>
+                <th style="color:brown;" colspan="2">
+                    <h3>
+                        ----Hospital facility Details ----
+                    </h3>
+                </th>
+            </tr>
+            @foreach (var item1 in ViewData["hmf"] as List<Dr.finder_project.EDM.Facility_tbl>)
+            {
+
+
+                <tr>
+                    <th style="color:black;">
+                        Facility Name:-
+                    </th>
+                    <td style="color:black;">
+                        @item1.Facility_Name
+                    </td>
+                </tr>
+                <tr>
+                    <th style="color:black;">
+                        Facility Description:-
+                    </th>
+                    <td style="color:black;">
+                        @item1.Facility_Description
+                    </td>
+                </tr>
+            }
+        </table>
+
+
+
+
+           
+        
+        
+            <table id="example" border="0">
+                <thead style="background-color:brown;color:white;">
+                    <tr>
+                        <th>Doctor Image</th>
+                        <th>Doctor Name</th>
+                        <th>Mobile No</th>
+                        <th>ReadMore</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot style="background-color:brown;">
+                    <tr>
+                        <td colspan="6" align="center"></td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                     @foreach (var item3 in ViewData["dmd"] as List<Dr.finder_project.EDM.Doctor_tbl>)
+            {
+
+                    <tr>
+                        <td>
+                            <a href="~/Images/@item3.Doctor_Image">
+                                <img src="~/Images/@item3.Doctor_Image" style="height:150px;width:150px;" class="img-responsive zoom-img " alt="" />
+                            </a>
+                        </td>
+                        <td>
+                            <h4><a href="#">@item3.Doctor_fname &nbsp; @item3.Doctor_mname</a></h4>
+                        </td>
+                        <td>
+                            <p>
+
+                            @item3.Doctor_Mobile_No
+
+
+  
+
+                            </p>
+                        </td>
+                        <td>
+                        <a href="@Url.Action("DoctorDetailsAdmin", "Admin", new { id = item3.Doctor_Id, dtid = item3.Doctor_Type_Id, cid = item3.Doctor_Id })" class="btn btn-danger">Read More</a>
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+        }            
+                </tbody>
+            </table>
+
+        <script type="text/javascript" src="~/Dr_finder_tmp/Admin_penal/web/js/jquery.dataTables.min.js"></script>
+            <script>
+	$(document).ready(function() {
+    $('#example').DataTable( {
+        "pagingType": "full_numbers"
+    } );
+} );
+            </script>
+        
+        </div>
+    </div>
+
+
+
+
+
+        

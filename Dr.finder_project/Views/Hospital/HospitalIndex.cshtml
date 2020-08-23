@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "HospitalIndex";
+    Layout = "~/Views/Shared/Hospital_master_Layout.cshtml";
+}
+
+
+    <div class="container-fluid">
+    <div class="modal-title">
+        
+
+        <div class="modal-body">
+            <div class="col-md-3 four-grid">
+                <div class="four-grid1" style="background-color:brown;height:200px;">
+                    <div class="icon">
+                        <center>
+                            <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                        </center>
+                    </div>
+                    <div class="four-text">
+                        <center>
+                            <h3 style="color:white;">Today Appointment </h3>
+                        </center>
+                        <center>
+                            <h4 style="color:white;"> <label>@ViewData["todayapp"]</label>  </h4>
+                        </center>
+                        <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                    </div>
+                    <a href="@Url.Action("Completedapp", "Hospital")" style="color:white"><center>More Info</center></a>
+                </div>
+
+            </div>
+            <div class="col-md-3 four-grid">
+                <div class="four-grid1" style="background-color:brown;height:200px;">
+                    <div class="icon">
+                        <center>
+                            <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                        </center>
+                    </div>
+                    <div class="four-text">
+                        <center><h3 style="color:white;">All Appointment</h3></center>
+                        <center>
+                            <h4 style="color:white;"> <label>@ViewData["Allapp"]</label>  </h4>
+                        </center>
+                        <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                    </div>
+                    <a href="@Url.Action("Completedapp", "Hospital")" style="color:white"><center>More Info</center></a>
+                </div>
+
+            </div>
+            <div class="col-md-3 four-grid">
+                <div class="four-grid1" style="background-color:brown;height:200px;">
+                    <div class="icon">
+                        <center>
+                            <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                        </center>
+                    </div>
+                    <div class="four-text">
+                        <center><h3 style="color:white;">Today Dr.Registration </h3></center>
+                        <center>
+                            <h4 style="color:white;"> <label>@ViewData["todaydr"]</label>  </h4>
+                        </center>
+                        <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                    </div>
+                    <a href="@Url.Action("ViewDrDetails", "Hospital")" style="color:white"><center>More Info</center></a>
+                </div>
+
+            </div>
+            <div class="col-md-3 four-grid">
+                <div class="four-grid1" style="background-color:brown;height:200px;">
+                    <div class="icon">
+                        <center>
+                            <i class="glyphicon glyphicon-user" style="color:white;" aria-hidden="true"></i>
+                        </center>
+                    </div>
+                    <div class="four-text">
+                        <center><h3 style="color:white;">All Doctors </h3></center>
+                        <center>
+                            <h4 style="color:white;"> <label>@ViewData["Alldr"]</label>  </h4>
+                        </center>
+                        <p> <span class="inlinebar"><canvas height="19" width="29" style="display: inline-block; width: 29px; height: 19px; vertical-align: top;"></canvas></span> </p>
+                    </div>
+                    <a href="@Url.Action("ViewDrDetails", "Hospital")" style="color:white"><center>More Info</center></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
